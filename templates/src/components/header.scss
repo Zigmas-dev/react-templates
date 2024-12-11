@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+
+  .logo {
+   font-size: 1.5rem;
+   font-weight: bold;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .nav {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+          color: #ffd700;
+        }
+      }
+    }
+  }
+}
