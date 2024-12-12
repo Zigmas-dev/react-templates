@@ -1,0 +1,48 @@
+.main {
+    display: flex;
+    flex-direction: column; /* Mobile dizainas */
+    gap: 1rem;
+    padding: 2rem;
+  
+    .card {
+      flex: 1 1 100%; /* Kortelės užima pilną plotį */
+      background-color: #f4f4f4;
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+  
+    /* Tablet */
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+  
+      .card {
+        flex: 1 1 45%; /* Kortelės užima 45% pločio */
+      }
+    }
+  
+    /* Laptop */
+    @media (min-width: 1024px) {
+      .card {
+        flex: 1 1 30%; /* Kortelės užima 30% pločio */
+      }
+    }
+  
+    /* Desktop */
+    @media (min-width: 1280px) {
+      .card {
+        flex: 1 1 22%; /* Kortelės užima 22% pločio */
+      }
+    }
+  
+    /* Widescreen */
+    @media (min-width: 1600px) {
+      .card {
+        flex: 1 1 18%; /* Kortelės užima 18% pločio */
+      }
+    }
+  }
+  
