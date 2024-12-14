@@ -1,0 +1,40 @@
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  .social-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  // Ikonų spalvos
+  .twitter {
+    color: #1da1f2; // Twitter mėlyna
+  }
+  .facebook {
+    color: #1877f2; // Facebook mėlyna
+  }
+  .google {
+    color: #ea4335; // Google raudona
+  }
+  .instagram {
+    color: #e4405f; // Instagram rožinė
+  }
+  .github {
+    color: #333; // GitHub tamsi pilka
+  }
+  .youtube {
+    color: #ff0000; // YouTube raudona
+  }
+  .tiktok {
+    color: #69c9d0; // TikTok mėlyna
+  }
+}

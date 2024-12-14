@@ -1,12 +1,94 @@
 .footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  
-    /* Widescreen - Pavyzdinis pritaikymas */
-    @media (min-width: 1600px) {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+
+  /* Teksto stilius */
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .social-links {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    a {
+      text-decoration: none;
+      color: #fff;
       font-size: 1.2rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #1da1f2; // Aktyvus hover spalva (pvz., Twitter mėlyna)
+      }
     }
   }
-  
+
+  /* Tablet */
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    .social-links {
+      gap: 1.5rem;
+
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  /* Laptop */
+  @media (min-width: 1024px) {
+    padding: 2rem;
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .social-links {
+      gap: 2rem;
+
+      a {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1440px) {
+    p {
+      font-size: 1.3rem;
+    }
+
+    .social-links {
+      gap: 2.5rem;
+
+      a {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  /* Widescreen */
+  @media (min-width: 1600px) {
+    p {
+      font-size: 1.4rem;
+    }
+
+    .social-links {
+      gap: 3rem;
+
+      a {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
