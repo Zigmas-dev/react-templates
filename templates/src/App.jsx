@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import SocialIcons from "./components/SocialIcons";
+import Button from "./components/Button"; // Import Button komponento
 import "./index.scss";
 
 const App = () => {
@@ -13,6 +14,10 @@ const App = () => {
     title: "Pavyzdinis pavadinimas",
     description: "Tai yra pavyzdinis kortelės aprašymas, kuris parodo, kaip ji atrodys.",
     image: "https://via.placeholder.com/150",
+  };
+
+  const handleButtonClick = () => {
+    alert("Mygtukas buvo paspaustas!");
   };
 
   return (
@@ -26,6 +31,9 @@ const App = () => {
         description={sampleCardData.description}
         image={sampleCardData.image}
       />
+      
+      {/* Mygtukas su funkcionalumu */}
+      <Button text="Spausk mane" onClick={handleButtonClick} variant="primary" />
       
       <Footer />
       <LoginForm />
