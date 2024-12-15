@@ -14,6 +14,9 @@ import FAQ from "./components/FAQ";
 import ProfileCard from "./components/ProfileCard";
 import Tabs from "./components/Tabs";
 import ProgressBar from "./components/ProgressBar";
+import Banner from "./components/Banner";
+import NotificationBar from "./components/NotificationBar";
+import Testimonials from "./components/Testimonials";
 import "./index.scss";
 
 const App = () => {
@@ -66,6 +69,27 @@ const App = () => {
     { label: "Kontaktai", content: "Tai yra kontaktų turinys." },
   ];
 
+  const testimonialsData = [
+    {
+      name: "Petras Petraitis",
+      message: "Puiki svetainė, labai patogu naudotis!",
+      position: "Klientas",
+      image: "https://via.placeholder.com/50",
+    },
+    {
+      name: "Monika Monikaitė",
+      message: "Geriausia patirtis, kokią tik esu turėjusi!",
+      position: "Vartotoja",
+      image: "https://via.placeholder.com/50",
+    },
+    {
+      name: "Tomas Tomaitis",
+      message: "Puikus dizainas ir funkcionalumas!",
+      position: "Partneris",
+      image: "https://via.placeholder.com/50",
+    },
+  ];
+
   const [progress, setProgress] = useState(50); // Pradinė reikšmė
 
   useEffect(() => {
@@ -100,6 +124,19 @@ const App = () => {
   return (
     <div>
       <Header />
+      <Banner
+        text="Sveiki atvykę! Mūsų svetainėje rasite daugybę naudingos informacijos."
+        speed="15s"
+        backgroundColor="#4caf50"
+        textColor="#fff"
+        fontSize="20px"
+      />
+      <NotificationBar
+        message="Tai yra pranešimas apie naują funkcionalumą!"
+        link="https://example.com"
+        linkText="Sužinokite daugiau"
+        type="info"
+      />
       <Breadcrumb items={breadcrumbItems} />
       <Main />
       {alertMessage.visible && (
@@ -128,6 +165,7 @@ const App = () => {
               <FAQ key={index} question={item.question} answer={item.answer} />
             ))}
           </div>
+          <Testimonials testimonials={testimonialsData} />
         </>
       )}
       <SocialIcons />

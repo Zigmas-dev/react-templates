@@ -1,0 +1,33 @@
+.notification-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+  
+    a {
+      margin-left: 10px;
+      text-decoration: underline;
+      color: #fff;
+    }
+  
+    &.info {
+      background-color: #007bff;
+    }
+  
+    &.success {
+      background-color: #28a745;
+    }
+  
+    &.warning {
+      background-color: #ffc107;
+      color: #000;
+    }
+  
+    &.error {
+      background-color: #dc3545;
+    }
+  }
+  

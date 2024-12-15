@@ -1,0 +1,25 @@
+.banner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .banner-text {
+    white-space: nowrap;
+    position: absolute;
+    display: inline-block;
+    animation: marquee linear infinite;
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
