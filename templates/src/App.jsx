@@ -7,15 +7,16 @@ import RegisterForm from "./components/RegisterForm";
 import SocialIcons from "./components/SocialIcons";
 import Card from "./components/Card";
 import Loader from "./components/Loader";
-import Alert from "./components/Alert"; // Importuojame Alert komponentą
+import Alert from "./components/Alert";
+import Breadcrumb from "./components/Breadcrumb"; // Pridedame Breadcrumb importą
 import "./index.scss";
 
 const App = () => {
-  // Naudojame state valdyti krovimo būsenai
   const [isLoading, setIsLoading] = useState(true);
   const [alertMessage, setAlertMessage] = useState({
     message: "Sveiki atvykę į mūsų svetainę!",
     type: "success",
+    visible: true,
   });
 
   const sampleCardData = {
@@ -24,28 +25,50 @@ const App = () => {
     image: "https://via.placeholder.com/150",
   };
 
-  // useEffect, kad nustatytų laikmatį ir išjungtų krovimą
+  const breadcrumbItems = [
+    { label: "Pradžia", href: "/" },
+    { label: "Puslapis", href: "/page" },
+    { label: "Dabartinis puslapis" },
+  ];
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false); // Po 3 sekundžių išjungiame loaderį
+      setIsLoading(false);
       setAlertMessage({
         message: "Krovimas baigtas!",
         type: "info",
+        visible: true,
       });
-    }, 3000); // 3000 ms = 3 sekundės
+    }, 3000);
 
-    // Išvalome laikmatį, jei komponentas sunaikinamas
-    return () => clearTimeout(timer);
+    const alertTimer = setTimeout(() => {
+      setAlertMessage((prev) => ({ ...prev, visible: false }));
+    }, 8000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(alertTimer);
+    };
   }, []);
+
+  const closeAlert = () => {
+    setAlertMessage((prev) => ({ ...prev, visible: false }));
+  };
 
   return (
     <div>
       <Header />
+      <Breadcrumb items={breadcrumbItems} /> {/* Rodomas Breadcrumb */}
       <Main />
-      {/* Rodyti Alert, jei yra pranešimas */}
-      <Alert message={alertMessage.message} type={alertMessage.type} />
+      {alertMessage.visible && (
+        <Alert
+          message={alertMessage.message}
+          type={alertMessage.type}
+          onClose={closeAlert}
+        />
+      )}
       {isLoading ? (
-        <Loader /> // Rodomas loaderis
+        <Loader />
       ) : (
         <Card
           title={sampleCardData.title}

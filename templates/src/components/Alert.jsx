@@ -1,21 +1,21 @@
-import PropTypes from "prop-types"; // Importuojame PropTypes
+import PropTypes from "prop-types";
 import "./alert.scss";
 
-const Alert = ({ message, type = "info" }) => (
+const Alert = ({ message, type = "info", onClose }) => (
   <div className={`alert alert-${type}`}>
-    {message}
+    <span>{message}</span>
+    {onClose && (
+      <button className="alert-close" onClick={onClose}>
+        ✖
+      </button>
+    )}
   </div>
 );
 
-// Pridedame prop-types validaciją
 Alert.propTypes = {
-  message: PropTypes.string.isRequired, // `message` yra privalomas string
-  type: PropTypes.oneOf(["info", "success", "warning", "error"]), // `type` yra vienas iš išvardintų tipų
-};
-
-// Numatytasis `type` jau apibrėžtas funkcijoje, bet galima palikti dar kartą čia, jei reikia:
-Alert.defaultProps = {
-  type: "info",
+  message: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["success", "info", "warning", "error"]),
+  onClose: PropTypes.func,
 };
 
 export default Alert;
