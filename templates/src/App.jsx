@@ -10,7 +10,10 @@ import Loader from "./components/Loader";
 import Alert from "./components/Alert";
 import Breadcrumb from "./components/Breadcrumb";
 import Gallery from "./components/Gallery";
-import FAQ from "./components/FAQ"; // Pridedame FAQ
+import FAQ from "./components/FAQ";
+import ProfileCard from "./components/ProfileCard";
+import Tabs from "./components/Tabs";
+import ProgressBar from "./components/ProgressBar";
 import "./index.scss";
 
 const App = () => {
@@ -50,6 +53,21 @@ const App = () => {
     },
   ];
 
+  const profileData = {
+    name: "Jonas Jonaitis",
+    position: "Web Developer",
+    image: "https://via.placeholder.com/150",
+    description: "Patyręs programuotojas, dirbantis su React ir Node.js.",
+  };
+
+  const tabsData = [
+    { label: "Apie mane", content: "Tai yra apie mane turinys." },
+    { label: "Projektai", content: "Tai yra projektų turinys." },
+    { label: "Kontaktai", content: "Tai yra kontaktų turinys." },
+  ];
+
+  const [progress, setProgress] = useState(50); // Pradinė reikšmė
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -74,6 +92,11 @@ const App = () => {
     setAlertMessage((prev) => ({ ...prev, visible: false }));
   };
 
+  // Funkcija progreso keitimui
+  const handleProgressChange = () => {
+    setProgress((prev) => (prev >= 100 ? 0 : prev + 10));
+  };
+
   return (
     <div>
       <Header />
@@ -96,6 +119,10 @@ const App = () => {
             image={sampleCardData.image}
           />
           <Gallery images={galleryImages} />
+          <ProfileCard {...profileData} />
+          <Tabs tabs={tabsData} />
+          <ProgressBar progress={progress} />
+          <button onClick={handleProgressChange}>Atnaujinti progresą</button>
           <div className="faq-container">
             {faqItems.map((item, index) => (
               <FAQ key={index} question={item.question} answer={item.answer} />
@@ -103,10 +130,10 @@ const App = () => {
           </div>
         </>
       )}
+      <SocialIcons />
       <Footer />
       <LoginForm />
       <RegisterForm />
-      <SocialIcons />
     </div>
   );
 };

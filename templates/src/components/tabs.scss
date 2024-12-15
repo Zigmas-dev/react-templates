@@ -1,0 +1,35 @@
+.tabs {
+    width: 100%;
+    margin: 20px 0;
+  
+    &__buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+  
+    &__button {
+      padding: 10px 20px;
+      border: none;
+      background: #e0e0e0;
+      cursor: pointer;
+      transition: background 0.3s;
+  
+      &.active {
+        background: #0073e6;
+        color: #fff;
+      }
+  
+      &:hover:not(.active) {
+        background: #ccc;
+      }
+    }
+  
+    &__content {
+      padding: 15px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      border-radius: 4px;
+    }
+  }
+  
