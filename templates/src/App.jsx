@@ -8,7 +8,9 @@ import SocialIcons from "./components/SocialIcons";
 import Card from "./components/Card";
 import Loader from "./components/Loader";
 import Alert from "./components/Alert";
-import Breadcrumb from "./components/Breadcrumb"; // Pridedame Breadcrumb importą
+import Breadcrumb from "./components/Breadcrumb";
+import Gallery from "./components/Gallery";
+import FAQ from "./components/FAQ"; // Pridedame FAQ
 import "./index.scss";
 
 const App = () => {
@@ -29,6 +31,23 @@ const App = () => {
     { label: "Pradžia", href: "/" },
     { label: "Puslapis", href: "/page" },
     { label: "Dabartinis puslapis" },
+  ];
+
+  const galleryImages = [
+    "https://via.placeholder.com/150",
+    "https://via.placeholder.com/200",
+    "https://via.placeholder.com/250",
+  ];
+
+  const faqItems = [
+    {
+      question: "Kaip veikia svetainė?",
+      answer: "Mūsų svetainė suteikia vartotojams patogią prieigą prie svarbios informacijos.",
+    },
+    {
+      question: "Kaip galiu susisiekti?",
+      answer: "Galite susisiekti naudodamiesi mūsų kontaktine forma arba el. paštu.",
+    },
   ];
 
   useEffect(() => {
@@ -58,7 +77,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Breadcrumb items={breadcrumbItems} /> {/* Rodomas Breadcrumb */}
+      <Breadcrumb items={breadcrumbItems} />
       <Main />
       {alertMessage.visible && (
         <Alert
@@ -70,11 +89,19 @@ const App = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <Card
-          title={sampleCardData.title}
-          description={sampleCardData.description}
-          image={sampleCardData.image}
-        />
+        <>
+          <Card
+            title={sampleCardData.title}
+            description={sampleCardData.description}
+            image={sampleCardData.image}
+          />
+          <Gallery images={galleryImages} />
+          <div className="faq-container">
+            {faqItems.map((item, index) => (
+              <FAQ key={index} question={item.question} answer={item.answer} />
+            ))}
+          </div>
+        </>
       )}
       <Footer />
       <LoginForm />
