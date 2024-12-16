@@ -14,6 +14,7 @@ import FAQ from "./components/FAQ";
 import ProfileCard from "./components/ProfileCard";
 import Tabs from "./components/Tabs";
 import ProgressBar from "./components/ProgressBar";
+import SkillProgressBars from "./components/SkillProgressBars"; // Naujas komponentas
 import Banner from "./components/Banner";
 import NotificationBar from "./components/NotificationBar";
 import Testimonials from "./components/Testimonials";
@@ -21,7 +22,7 @@ import CountdownTimer from "./components/CountdownTimer";
 import PricingTable from "./components/PricingTable";
 import Calendar from "./components/Calendar";
 import Accordion from "./components/Accordion";
-import ChatWidget from "./components/ChatWidget"; // Importuojamas naujas komponentas
+import ChatWidget from "./components/ChatWidget";
 import "./index.scss";
 
 const App = () => {
@@ -101,6 +102,13 @@ const App = () => {
     { title: "Klausimas 3", content: "Tai yra atsakymas į trečią klausimą." },
   ];
 
+  const skills = [
+    { name: "HTML", level: 90 },
+    { name: "CSS", level: 80 },
+    { name: "JavaScript", level: 70 },
+    { name: "React", level: 85 },
+  ]; // Pavyzdiniai įgūdžiai
+
   const [progress, setProgress] = useState(50);
 
   useEffect(() => {
@@ -172,6 +180,7 @@ const App = () => {
           <Tabs tabs={tabsData} />
           <ProgressBar progress={progress} />
           <button onClick={handleProgressChange}>Atnaujinti progresą</button>
+          <SkillProgressBars skills={skills} /> {/* Pridėtas įgūdžių komponentas */}
           <div className="faq-container">
             {faqItems.map((item, index) => (
               <FAQ key={index} question={item.question} answer={item.answer} />
@@ -182,7 +191,7 @@ const App = () => {
           <Calendar />
         </>
       )}
-      <ChatWidget /> {/* Pridėtas ChatWidget komponentas */}
+      <ChatWidget />
       <SocialIcons />
       <Footer />
       <LoginForm />
