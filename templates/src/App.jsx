@@ -21,6 +21,7 @@ import CountdownTimer from "./components/CountdownTimer";
 import PricingTable from "./components/PricingTable";
 import Calendar from "./components/Calendar";
 import Accordion from "./components/Accordion";
+import ChatWidget from "./components/ChatWidget"; // Importuojamas naujas komponentas
 import "./index.scss";
 
 const App = () => {
@@ -100,7 +101,7 @@ const App = () => {
     { title: "Klausimas 3", content: "Tai yra atsakymas į trečią klausimą." },
   ];
 
-  const [progress, setProgress] = useState(50); // Pradinė reikšmė
+  const [progress, setProgress] = useState(50);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -126,7 +127,6 @@ const App = () => {
     setAlertMessage((prev) => ({ ...prev, visible: false }));
   };
 
-  // Funkcija progreso keitimui
   const handleProgressChange = () => {
     setProgress((prev) => (prev >= 100 ? 0 : prev + 10));
   };
@@ -182,6 +182,7 @@ const App = () => {
           <Calendar />
         </>
       )}
+      <ChatWidget /> {/* Pridėtas ChatWidget komponentas */}
       <SocialIcons />
       <Footer />
       <LoginForm />
