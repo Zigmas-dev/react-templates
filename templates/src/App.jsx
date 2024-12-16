@@ -19,6 +19,7 @@ import NotificationBar from "./components/NotificationBar";
 import Testimonials from "./components/Testimonials";
 import CountdownTimer from "./components/CountdownTimer";
 import PricingTable from "./components/PricingTable";
+import Calendar from "./components/Calendar";
 import "./index.scss";
 
 const App = () => {
@@ -170,6 +171,7 @@ const App = () => {
             ))}
           </div>
           <Testimonials testimonials={testimonialsData} />
+          <Calendar />
         </>
       )}
       <SocialIcons />
