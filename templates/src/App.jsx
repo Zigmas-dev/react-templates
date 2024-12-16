@@ -20,6 +20,7 @@ import Testimonials from "./components/Testimonials";
 import CountdownTimer from "./components/CountdownTimer";
 import PricingTable from "./components/PricingTable";
 import Calendar from "./components/Calendar";
+import Accordion from "./components/Accordion";
 import "./index.scss";
 
 const App = () => {
@@ -91,6 +92,12 @@ const App = () => {
       position: "Partneris",
       image: "https://via.placeholder.com/50",
     },
+  ];
+
+  const accordionItems = [
+    { title: "Klausimas 1", content: "Tai yra atsakymas į pirmą klausimą." },
+    { title: "Klausimas 2", content: "Tai yra atsakymas į antrą klausimą." },
+    { title: "Klausimas 3", content: "Tai yra atsakymas į trečią klausimą." },
   ];
 
   const [progress, setProgress] = useState(50); // Pradinė reikšmė
@@ -170,6 +177,7 @@ const App = () => {
               <FAQ key={index} question={item.question} answer={item.answer} />
             ))}
           </div>
+          <Accordion items={accordionItems} />
           <Testimonials testimonials={testimonialsData} />
           <Calendar />
         </>
