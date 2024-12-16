@@ -17,6 +17,8 @@ import ProgressBar from "./components/ProgressBar";
 import Banner from "./components/Banner";
 import NotificationBar from "./components/NotificationBar";
 import Testimonials from "./components/Testimonials";
+import CountdownTimer from "./components/CountdownTimer";
+import PricingTable from "./components/PricingTable";
 import "./index.scss";
 
 const App = () => {
@@ -131,6 +133,8 @@ const App = () => {
         textColor="#fff"
         fontSize="20px"
       />
+      <CountdownTimer targetDate="2024-12-31T23:59:59" />
+      <PricingTable />
       <NotificationBar
         message="Tai yra pranešimas apie naują funkcionalumą!"
         link="https://example.com"

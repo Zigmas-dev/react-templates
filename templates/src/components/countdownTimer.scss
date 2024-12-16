@@ -1,0 +1,23 @@
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+  
+    span {
+      margin: 0 5px;
+      padding: 5px 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  
+      &:not(:last-child)::after {
+        content: ":";
+        margin-left: 5px;
+      }
+    }
+  }
+  
