@@ -1,23 +1,36 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import "./faq.scss";
 
-const FAQ = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const faqItems = [
+    {
+      question: "Kaip veikia svetainė?",
+      answer: "Mūsų svetainė suteikia vartotojams patogią prieigą prie svarbios informacijos.",
+    },
+    {
+      question: "Kaip galiu susisiekti?",
+      answer: "Galite susisiekti naudodamiesi mūsų kontaktine forma arba el. paštu.",
+    },
+  ];
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-    <div className="faq">
-      <h4 onClick={() => setIsOpen(!isOpen)} className="faq-question">
-        {question}
-      </h4>
-      {isOpen && <p className="faq-answer">{answer}</p>}
+    <div className="faq-container">
+      {faqItems.map((item, index) => (
+        <div key={index} className="faq">
+          <h4 onClick={() => toggleFAQ(index)} className="faq-question">
+            {item.question}
+          </h4>
+          {openIndex === index && <p className="faq-answer">{item.answer}</p>}
+        </div>
+      ))}
     </div>
   );
-};
-
-FAQ.propTypes = {
-  question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
 };
 
 export default FAQ;

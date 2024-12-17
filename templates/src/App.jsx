@@ -34,45 +34,12 @@ const App = () => {
     visible: true,
   });
 
-  const sampleCardData = {
-    title: "Pavyzdinis pavadinimas",
-    description: "Tai yra pavyzdinis kortelės aprašymas.",
-    image: "https://via.placeholder.com/150",
-  };
-
-  const breadcrumbItems = [
-    { label: "Pradžia", href: "/" },
-    { label: "Puslapis", href: "/page" },
-    { label: "Dabartinis puslapis" },
-  ];
+  
 
   const galleryImages = [
     "https://via.placeholder.com/150",
     "https://via.placeholder.com/200",
     "https://via.placeholder.com/250",
-  ];
-
-  const faqItems = [
-    {
-      question: "Kaip veikia svetainė?",
-      answer: "Mūsų svetainė suteikia vartotojams patogią prieigą prie svarbios informacijos.",
-    },
-    {
-      question: "Kaip galiu susisiekti?",
-      answer: "Galite susisiekti naudodamiesi mūsų kontaktine forma arba el. paštu.",
-    },
-  ];
-
-  const tabsData = [
-    { label: "Apie mane", content: "Tai yra apie mane turinys." },
-    { label: "Projektai", content: "Tai yra projektų turinys." },
-    { label: "Kontaktai", content: "Tai yra kontaktų turinys." },
-  ];
-
-  const accordionItems = [
-    { title: "Klausimas 1", content: "Tai yra atsakymas į pirmą klausimą." },
-    { title: "Klausimas 2", content: "Tai yra atsakymas į antrą klausimą." },
-    { title: "Klausimas 3", content: "Tai yra atsakymas į trečią klausimą." },
   ];
 
   const skills = [
@@ -113,9 +80,12 @@ const App = () => {
       <CountdownTimer targetDate="2024-12-31T23:59:59" />
       <PricingTable />
       <Carousel />
+      <ProfileCard />
+      <Tabs />
       <NotificationBar />
-      <Breadcrumb items={breadcrumbItems} />
+      <Breadcrumb />
       <Main />
+      <FAQ />
       {alertMessage.visible && (
         <Alert
           message={alertMessage.message}
@@ -127,29 +97,19 @@ const App = () => {
         <Loader />
       ) : (
         <>
-          <Card
-            title={sampleCardData.title}
-            description={sampleCardData.description}
-            image={sampleCardData.image}
-          />
           <Gallery images={galleryImages} />
-          <ProfileCard />
-          <Tabs tabs={tabsData} />
-          <ProgressBar />
           <SkillProgressBars skills={skills} /> {/* Pridėtas įgūdžių komponentas */}
-          <div className="faq-container">
-            {faqItems.map((item, index) => (
-              <FAQ key={index} question={item.question} answer={item.answer} />
-            ))}
-          </div>
-          <Accordion items={accordionItems} />
-          <Testimonials />
+          
         </>
       )}
-      <Calendar />
+      <Card />
+      <Accordion />
+      <ProgressBar />
+      <Testimonials />
       <ChatWidget />
       <SocialIcons />
       <Footer />
+      <Calendar />
       <LoginForm />
       <RegisterForm />
     </div>

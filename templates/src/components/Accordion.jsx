@@ -1,24 +1,20 @@
 import AccordionItem from "./AccordionItem";
-import PropTypes from "prop-types";
 import "./accordion.scss";
 
-const Accordion = ({ items }) => {
+const Accordion = () => {
+  const accordionItems = [
+    { title: "Klausimas 1", content: "Tai yra atsakymas į pirmą klausimą." },
+    { title: "Klausimas 2", content: "Tai yra atsakymas į antrą klausimą." },
+    { title: "Klausimas 3", content: "Tai yra atsakymas į trečią klausimą." },
+  ];
+
   return (
     <div className="accordion">
-      {items.map((item, index) => (
+      {accordionItems.map((item, index) => (
         <AccordionItem key={index} title={item.title} content={item.content} />
       ))}
     </div>
   );
-};
-
-Accordion.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default Accordion;
