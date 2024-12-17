@@ -1,9 +1,16 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import "./carousel.scss"; // Stilių failas, kurį reikia pridėti
+import "./carousel.scss"; // Stilių failas
 
-const Carousel = ({ images }) => {
+const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Karuselės nuotraukų masyvas perkeltas čia
+  const images = [
+    "https://via.placeholder.com/300x200",
+    "https://via.placeholder.com/400x250",
+    "https://via.placeholder.com/500x300",
+  ];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -38,7 +45,7 @@ const Carousel = ({ images }) => {
 };
 
 Carousel.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  images: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Carousel;

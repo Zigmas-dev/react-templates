@@ -1,7 +1,11 @@
-import PropTypes from "prop-types";
 import "./notificationbar.scss";
 
-const NotificationBar = ({ message, link, linkText, type }) => {
+const NotificationBar = () => {
+  const message = "Tai yra pranešimas apie naują funkcionalumą!";
+  const link = "https://example.com";
+  const linkText = "Sužinokite daugiau";
+  const type = "info";
+
   return (
     <div className={`notification-bar ${type}`}>
       <span>{message}</span>
@@ -12,19 +16,6 @@ const NotificationBar = ({ message, link, linkText, type }) => {
       )}
     </div>
   );
-};
-
-NotificationBar.propTypes = {
-  message: PropTypes.string.isRequired,
-  link: PropTypes.string,
-  linkText: PropTypes.string,
-  type: PropTypes.oneOf(["info", "success", "warning", "error"]),
-};
-
-NotificationBar.defaultProps = {
-  link: null,
-  linkText: "Sužinokite daugiau",
-  type: "info",
 };
 
 export default NotificationBar;

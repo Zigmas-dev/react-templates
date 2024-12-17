@@ -1,7 +1,12 @@
-import PropTypes from "prop-types";
 import "./banner.scss";
 
-const Banner = ({ text, speed = "10s", backgroundColor = "#f4f4f4", textColor = "#333", fontSize = "18px" }) => {
+const Banner = () => {
+  const text = "Sveiki atvykę! Mūsų svetainėje rasite daugybę naudingos informacijos.";
+  const speed = "15s";
+  const backgroundColor = "#4caf50";
+  const textColor = "#fff";
+  const fontSize = "20px";
+
   return (
     <div className="banner" style={{ backgroundColor }}>
       <div
@@ -16,15 +21,6 @@ const Banner = ({ text, speed = "10s", backgroundColor = "#f4f4f4", textColor = 
       </div>
     </div>
   );
-};
-
-// PropTypes patvirtinimai
-Banner.propTypes = {
-  text: PropTypes.string.isRequired, // Privalomas tekstas
-  speed: PropTypes.string,          // Teksto judėjimo greitis
-  backgroundColor: PropTypes.string, // Banerio fono spalva
-  textColor: PropTypes.string,       // Teksto spalva
-  fontSize: PropTypes.string,        // Šrifto dydis
 };
 
 export default Banner;

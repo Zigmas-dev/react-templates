@@ -22,6 +22,7 @@ import CountdownTimer from "./components/CountdownTimer";
 import PricingTable from "./components/PricingTable";
 import Calendar from "./components/Calendar";
 import Accordion from "./components/Accordion";
+import Carousel from "./components/Carousel"; // Importuotas naujas komponentas
 import ChatWidget from "./components/ChatWidget";
 import "./index.scss";
 
@@ -142,21 +143,11 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Banner
-        text="Sveiki atvykę! Mūsų svetainėje rasite daugybę naudingos informacijos."
-        speed="15s"
-        backgroundColor="#4caf50"
-        textColor="#fff"
-        fontSize="20px"
-      />
+      <Banner />
       <CountdownTimer targetDate="2024-12-31T23:59:59" />
       <PricingTable />
-      <NotificationBar
-        message="Tai yra pranešimas apie naują funkcionalumą!"
-        link="https://example.com"
-        linkText="Sužinokite daugiau"
-        type="info"
-      />
+      <Carousel />
+      <NotificationBar />
       <Breadcrumb items={breadcrumbItems} />
       <Main />
       {alertMessage.visible && (
