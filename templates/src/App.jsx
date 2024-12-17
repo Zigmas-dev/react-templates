@@ -63,38 +63,10 @@ const App = () => {
     },
   ];
 
-  const profileData = {
-    name: "Jonas Jonaitis",
-    position: "Web Developer",
-    image: "https://via.placeholder.com/150",
-    description: "Patyręs programuotojas, dirbantis su React ir Node.js.",
-  };
-
   const tabsData = [
     { label: "Apie mane", content: "Tai yra apie mane turinys." },
     { label: "Projektai", content: "Tai yra projektų turinys." },
     { label: "Kontaktai", content: "Tai yra kontaktų turinys." },
-  ];
-
-  const testimonialsData = [
-    {
-      name: "Petras Petraitis",
-      message: "Puiki svetainė, labai patogu naudotis!",
-      position: "Klientas",
-      image: "https://via.placeholder.com/50",
-    },
-    {
-      name: "Monika Monikaitė",
-      message: "Geriausia patirtis, kokią tik esu turėjusi!",
-      position: "Vartotoja",
-      image: "https://via.placeholder.com/50",
-    },
-    {
-      name: "Tomas Tomaitis",
-      message: "Puikus dizainas ir funkcionalumas!",
-      position: "Partneris",
-      image: "https://via.placeholder.com/50",
-    },
   ];
 
   const accordionItems = [
@@ -109,8 +81,6 @@ const App = () => {
     { name: "JavaScript", level: 70 },
     { name: "React", level: 85 },
   ]; // Pavyzdiniai įgūdžiai
-
-  const [progress, setProgress] = useState(50);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -134,10 +104,6 @@ const App = () => {
 
   const closeAlert = () => {
     setAlertMessage((prev) => ({ ...prev, visible: false }));
-  };
-
-  const handleProgressChange = () => {
-    setProgress((prev) => (prev >= 100 ? 0 : prev + 10));
   };
 
   return (
@@ -167,10 +133,9 @@ const App = () => {
             image={sampleCardData.image}
           />
           <Gallery images={galleryImages} />
-          <ProfileCard {...profileData} />
+          <ProfileCard />
           <Tabs tabs={tabsData} />
-          <ProgressBar progress={progress} />
-          <button onClick={handleProgressChange}>Atnaujinti progresą</button>
+          <ProgressBar />
           <SkillProgressBars skills={skills} /> {/* Pridėtas įgūdžių komponentas */}
           <div className="faq-container">
             {faqItems.map((item, index) => (
@@ -178,10 +143,10 @@ const App = () => {
             ))}
           </div>
           <Accordion items={accordionItems} />
-          <Testimonials testimonials={testimonialsData} />
-          <Calendar />
+          <Testimonials />
         </>
       )}
+      <Calendar />
       <ChatWidget />
       <SocialIcons />
       <Footer />
