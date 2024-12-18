@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
-import PropTypes from "prop-types";
 import "./countdownTimer.scss";
 
-const CountdownTimer = ({ targetDate }) => {
+const CountdownTimer = () => {
+  // Numatytas tikslinis laikas (2024-12-31 23:59:59)
+  const targetDate = "2024-12-31T23:59:59";
+
   const calculateTimeLeft = useCallback(() => {
     const difference = new Date(targetDate) - new Date();
     let timeLeft = {};
@@ -48,13 +50,6 @@ const CountdownTimer = ({ targetDate }) => {
       {timerComponents.length ? timerComponents : <span>Laikas baigėsi!</span>}
     </div>
   );
-};
-
-CountdownTimer.propTypes = {
-  targetDate: PropTypes.oneOfType([
-    PropTypes.instanceOf(Date), // Jei perduodamas Date objektas
-    PropTypes.string,           // Jei perduodama ISO data kaip tekstas
-  ]).isRequired,
 };
 
 export default CountdownTimer;

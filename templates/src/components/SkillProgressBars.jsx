@@ -1,7 +1,14 @@
-import PropTypes from "prop-types";
+import { useState } from "react";
 import "./skillprogressbars.scss";
 
-const SkillProgressBars = ({ skills }) => {
+const SkillProgressBars = () => {
+  const [skills] = useState([
+    { name: "HTML", level: 90 },
+    { name: "CSS", level: 80 },
+    { name: "JavaScript", level: 70 },
+    { name: "React", level: 85 },
+  ]);
+
   return (
     <div className="skills-container">
       {skills.map((skill, index) => (
@@ -20,16 +27,6 @@ const SkillProgressBars = ({ skills }) => {
       ))}
     </div>
   );
-};
-
-// Nustatomi komponento prop tipai
-SkillProgressBars.propTypes = {
-  skills: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      level: PropTypes.number.isRequired,
-    })
-  ).isRequired,
 };
 
 export default SkillProgressBars;
