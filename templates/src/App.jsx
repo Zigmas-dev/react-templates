@@ -1,5 +1,7 @@
 
 import Header from "./components/Header";
+import SocialMedia from "./components/SocialMedia";
+import CategoryLink from "./components/CategoryLink";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import LoginForm from "./components/LoginForm";
@@ -24,6 +26,8 @@ import Calendar from "./components/Calendar";
 import Accordion from "./components/Accordion";
 import Carousel from "./components/Carousel"; // Importuotas naujas komponentas
 import ChatWidget from "./components/ChatWidget";
+import SearchWithFilters from "./components/SearchWithFilters";
+import Portfolio from "./components/Portfolio";
 import "./index.scss";
 
 const App = () => {
@@ -34,11 +38,15 @@ const App = () => {
     <div>
       <Header />
       <Loader />
+      <SearchWithFilters />
       <Banner />
+      <SocialMedia />
       <CountdownTimer />
       <PricingTable />
+      <CategoryLink />
       <Carousel />
       <ProfileCard />
+      <Portfolio />
       <Tabs />
       <NotificationBar />
       <Breadcrumb />
