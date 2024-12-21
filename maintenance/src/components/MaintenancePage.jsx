@@ -4,7 +4,7 @@ import "./maintenancepage.scss";
 
 const MaintenancePage = () => {
   // Numatytas tikslinis laikas (pvz., 2024-12-31 23:59:59)
-  const targetDate = "2024-12-31T23:59:59";
+  const targetDate = "2025-01-31T23:59:59";
 
   const calculateTimeLeft = useCallback(() => {
     const difference = new Date(targetDate) - new Date();
