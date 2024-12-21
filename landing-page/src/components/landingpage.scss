@@ -1,0 +1,109 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7f9fc, #e4ebf5);
+  
+    .header {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #333;
+    }
+  
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 600px;
+    }
+  
+    .title {
+      font-size: 2.4rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+  
+    .description {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+  
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .input {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+  
+      .button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  
+    .thankyou {
+      font-size: 1.2rem;
+      color: #007bff;
+    }
+  
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+  
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      
+        // Ikonų spalvos
+        .facebook {
+          color: #1877f2; // Facebook mėlyna
+        }
+        .google {
+          color: #ea4335; // Google raudona
+        }
+        .instagram {
+          color: #e4405f; // Instagram rožinė
+        }
+        
+        .youtube {
+          color: #ff0000; // YouTube raudona
+        }
+        
+      }
+    }
+  }
+  
