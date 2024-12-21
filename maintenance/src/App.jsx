@@ -1,11 +1,11 @@
-import MaintenacePage from "./components/MaintenancePage";
+import MaintenancePage from "./components/maintenancePage";
 import "./index.scss";
 
 const App = () => {
  
   return (
     <div>
-      <MaintenacePage />
+      <MaintenancePage />
     </div>
   );
 };
