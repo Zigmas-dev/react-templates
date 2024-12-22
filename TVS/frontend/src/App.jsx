@@ -1,5 +1,6 @@
 import Dashboard from "./components/Dashboard";
 import ContentEditor from "./components/ContentEditor";
+import UserManagement from "./components/UserManagement";
 import "./index.scss";
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <div>
       <Dashboard />
       <ContentEditor />
+      <UserManagement />
     </div>
   );
 };
