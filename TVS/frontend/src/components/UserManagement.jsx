@@ -1,7 +1,11 @@
+
 import PropTypes from 'prop-types';
-import './UserManagement.scss';
+import './usermanagement.scss';
 
 const UserManagement = ({ users }) => {
+  // Patikriname, ar 'users' yra galiojantis masyvas
+  const userList = Array.isArray(users) ? users : [];
+
   return (
     <div className="user-management">
       <h1>Valdyti Vartotojus</h1>
@@ -15,7 +19,7 @@ const UserManagement = ({ users }) => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => (
+          {userList.map((user, index) => (
             <tr key={index}>
               <td>{user.name}</td>
               <td>{user.email}</td>
