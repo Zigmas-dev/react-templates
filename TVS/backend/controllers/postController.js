@@ -1,6 +1,18 @@
-// API logika
-
+const multer = require('multer');
+const path = require('path');
 const { getAllPosts, createPost, updatePost, deletePost } = require('../models/postModel');
+
+// Sukonfigūruojame multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/'); // Nuotraukos saugojimo vieta
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+const upload = multer({ storage });
 
 const getPosts = async (req, res) => {
   try {
@@ -13,9 +25,11 @@ const getPosts = async (req, res) => {
 };
 
 const addPost = async (req, res) => {
-  const { title, content } = req.body;
+  const { pavadinimas, aprasymas } = req.body;
+  const nuotrauka = req.file ? req.file.filename : null;
+
   try {
-    await createPost(title, content);
+    await createPost(pavadinimas, aprasymas, nuotrauka);
     res.status(201).send('Straipsnis pridėtas');
   } catch (err) {
     console.error('Klaida pridedant straipsnį:', err);
@@ -25,9 +39,11 @@ const addPost = async (req, res) => {
 
 const editPost = async (req, res) => {
   const { id } = req.params;
-  const { title, content } = req.body;
+  const { pavadinimas, aprasymas } = req.body;
+  const nuotrauka = req.file ? req.file.filename : null;
+
   try {
-    await updatePost(id, title, content);
+    await updatePost(id, pavadinimas, aprasymas, nuotrauka);
     res.send('Straipsnis atnaujintas');
   } catch (err) {
     console.error('Klaida atnaujinant straipsnį:', err);
@@ -48,9 +64,7 @@ const removePost = async (req, res) => {
 
 module.exports = {
   getPosts,
-  addPost,
-  editPost,
+  addPost: [upload.single('nuotrauka'), addPost],
+  editPost: [upload.single('nuotrauka'), editPost],
   removePost,
 };
-
-

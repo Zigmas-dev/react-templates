@@ -1,6 +1,6 @@
 // Duomenų bazės konfiguracija
 
-const mysql = require('mysgl2/promise');
+const mysql = require('mysql2/promise');
 require('dotenv').config();
 
 const dbConfig = {
