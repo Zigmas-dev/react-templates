@@ -28,6 +28,7 @@ import Carousel from "./components/Carousel"; // Importuotas naujas komponentas
 import ChatWidget from "./components/ChatWidget";
 import SearchWithFilters from "./components/SearchWithFilters";
 import Portfolio from "./components/Portfolio";
+import ContactForm from "./components/ContactForm";
 import "./index.scss";
 
 const App = () => {
@@ -58,6 +59,7 @@ const App = () => {
       <Card />
       <Accordion />
       <ProgressBar />
+      <ContactForm />
       <Testimonials />
       <ChatWidget />
       <SocialIcons />
