@@ -1,5 +1,6 @@
 
 import Header from "./components/Header";
+import LanguageSelector from "./components/LanguageSelector";
 import SocialMedia from "./components/SocialMedia";
 import CategoryLink from "./components/CategoryLink";
 import Main from "./components/Main";
@@ -33,12 +34,11 @@ import "./index.scss";
 
 const App = () => {
  
-  
-
   return (
     <div>
       <Header />
       <Loader />
+      <LanguageSelector />
       <SearchWithFilters />
       <Banner />
       <SocialMedia />
