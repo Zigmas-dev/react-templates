@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"; // Import PropTypes
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import "./VatCalculator.scss";
+import "./vatcalculator.scss";
 
-const VatCalculator = ({ vatRate }) => {
+const VatCalculator = ({ vatRate = 21 }) => {  // Default parameter for vatRate
   const formik = useFormik({
     initialValues: {
       totalAmount: "",
@@ -65,12 +65,9 @@ const VatCalculator = ({ vatRate }) => {
   );
 };
 
+// Add prop types validation
 VatCalculator.propTypes = {
   vatRate: PropTypes.number,
-};
-
-VatCalculator.defaultProps = {
-  vatRate: 21, // Numatytasis PVM tarifas
 };
 
 export default VatCalculator;
