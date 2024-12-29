@@ -31,6 +31,8 @@ import SearchWithFilters from "./components/SearchWithFilters";
 import Portfolio from "./components/Portfolio";
 import ContactForm from "./components/ContactForm";
 import InvoiceGenerator from "./components/InvoiceGenerator";
+import LoginForm1 from "./components/LoginForm1";
+import VatCalculator from "./components/VatCalculator";
 import "./index.scss";
 
 const App = () => {
@@ -69,6 +71,8 @@ const App = () => {
       <Calendar />
       <LoginForm />
       <RegisterForm />
+      <LoginForm1 />
+      <VatCalculator />
     </div>
   );
 };
