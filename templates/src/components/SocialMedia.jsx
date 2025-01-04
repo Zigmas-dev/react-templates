@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"; // Importuojame PropTypes
 import { useState } from "react";
 import "./socialmedia.scss";
 
@@ -152,6 +153,24 @@ const Post = ({ post, onEdit, onComment, onReact }) => {
       </div>
     </div>
   );
+};
+
+// Pridėkime PropTypes validaciją
+Post.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    user: PropTypes.string.isRequired,
+    profilePic: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    comments: PropTypes.arrayOf(PropTypes.string).isRequired,
+    reactions: PropTypes.shape({
+      like: PropTypes.number.isRequired,
+      smile: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onComment: PropTypes.func.isRequired,
+  onReact: PropTypes.func.isRequired,
 };
 
 export default SocialMedia;

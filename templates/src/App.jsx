@@ -32,9 +32,10 @@ import Portfolio from "./components/Portfolio";
 import ContactForm from "./components/ContactForm";
 import InvoiceGenerator from "./components/InvoiceGenerator";
 import LoginForm1 from "./components/LoginForm1";
+import Cart from "./components/Cart";
 import VatCalculator from "./components/VatCalculator";
 import InvoiceVatTool from "./components/InvoiceVatTool";
-import Cart from "./components/Cart";
+import DarkMode from "./components/DarkMode";
 import "./index.scss";
 
 const App = () => {
@@ -42,11 +43,11 @@ const App = () => {
   return (
     <div>
       <Header />
+      <DarkMode />
       <Loader />
       <LanguageSelector />
       <Cart />
       <SearchWithFilters />
-      <InvoiceVatTool />
       <Banner />
       <SocialMedia />
       <CountdownTimer />
@@ -68,7 +69,6 @@ const App = () => {
       <ProgressBar />
       <ContactForm />
       <Testimonials />
-      <InvoiceGenerator />
       <ChatWidget />
       <SocialIcons />
       <Footer />
@@ -76,6 +76,8 @@ const App = () => {
       <LoginForm />
       <RegisterForm />
       <LoginForm1 />
+      <InvoiceVatTool />
+      <InvoiceGenerator />
       <VatCalculator />
     </div>
   );
