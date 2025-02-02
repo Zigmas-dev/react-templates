@@ -1,0 +1,26 @@
+:root {
+  --main-font: "Montserrat", sans-serif;
+  --header-hight: 70px;
+}
+
+body {
+  //background-color: aqua;
+  background: url('./assets/background_1.webp') no-repeat center center fixed;
+  background-size: cover;
+}
+
+// Animacijos
+
+@keyframes spinLogo {
+  0% {
+   transform: rotateY(0deg);
+ }
+  100% {
+   transform: rotateY(720deg); /* 2 pilni apsisukimai (2 x 360 laipsnių) */
+ }
+}
+  
+.logo img {
+  animation: spinLogo 2s ease-in-out; /* Automatiškai taikoma animacija */
+}
+
