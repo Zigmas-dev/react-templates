@@ -1,0 +1,49 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  min-width: 300px;
+  padding: 0 1rem; // Vienododi atstumai iš kairės ir dešinės
+  margin: 0 auto; // Centruoja horizontaliai
+}
+
+.about-container p {
+  text-align: justify;
+  text-indent: 2.5rem;
+  font-family: var(--main-font);
+  font-size: 1rem;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-container p {
+    font-size: 1.5rem;
+    text-indent: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .about-container {
+    width: 48%;
+    display: flex;
+    margin-right: 2%;
+  }
+
+  .about-container p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .about-container {
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  .about-container p {
+    font-size: 1.8rem;
+  }
+}

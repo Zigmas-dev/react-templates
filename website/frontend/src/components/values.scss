@@ -1,0 +1,44 @@
+.values-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.values-container h2 {
+  font-family: var(--main-font);
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--font-color);
+  margin-bottom: 1rem;
+}
+
+.values-container p,
+.values-container li {
+  text-align: justify;
+  text-indent: 2rem;
+  font-family: var(--main-font);
+  font-size: 1rem;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  margin-left: 10px;
+  min-width: 250px;
+}
+
+.values-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.values-container li {
+  line-height: 1.2rem;
+}
+
+.values-container li strong {
+  font-weight: bold;
+}
