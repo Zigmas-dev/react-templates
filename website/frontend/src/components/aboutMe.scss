@@ -1,7 +1,8 @@
 .about-container {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  align-items: center;
+  margin-top: 200px;
   min-width: 300px;
   padding: 0 1rem; // Vienododi atstumai iš kairės ir dešinės
   margin: 0 auto; // Centruoja horizontaliai
