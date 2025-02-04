@@ -1,33 +1,21 @@
 .values-container {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 1rem;
-  margin-bottom: 4rem;
-  padding: 0 1rem;
-  margin: 0 auto;
-}
-
-.values-container h2 {
-  font-family: var(--main-font);
-  font-size: 1.3rem;
-  text-align: center;
-  color: var(--font-color);
-  margin-bottom: 1rem;
+  padding: 0 1rem; /* Lygiaverčiai atstumai iš kairės ir dešinės */
+  margin: 0 auto; /* Centruoja horizontaliai */
+  padding-top: 2rem;
+  margin-top: 2rem;
 }
 
 .values-container p,
 .values-container li {
   text-align: justify;
-  text-indent: 2rem;
+  text-indent: 1.5rem;
   font-family: var(--main-font);
   font-size: 1rem;
   hyphens: auto;
   overflow-wrap: break-word;
-  margin-left: 10px;
-  min-width: 250px;
+  min-width: 200px;
 }
 
 .values-container ul {
@@ -36,9 +24,69 @@
 }
 
 .values-container li {
-  line-height: 1.2rem;
+  line-height: 1.2;
 }
 
 .values-container li strong {
   font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  .values-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 4rem; 
+    margin: 0 auto; 
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .values-container p,
+  .values-container li {
+    text-align: justify;
+    text-indent: 2rem;
+    font-size: 1.5rem;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  .values-container ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .values-container li {
+    line-height: 1.3; 
+  }
+
+  .values-container li strong {
+    font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .values-container {
+    padding: 0 8rem; 
+    margin: 0 auto; 
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  .values-container li {
+    font-size: 1.6rem;
+    text-indent: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .values-container {
+    padding: 0 16rem; 
+    margin: 0 auto; 
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  .values-container li {
+    font-size: 1.8rem;
+  }
 }

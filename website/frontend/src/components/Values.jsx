@@ -3,7 +3,7 @@ import "./values.scss";
 const Values = () => {
   return (
     <div className="values-container">
-      <h2>Mano vertybės</h2>
+ 
        <ul>
          <li>
           <strong>Nuolatinis tobulėjimas</strong> – Kaip pradedantis programuotojas,
