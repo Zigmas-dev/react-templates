@@ -1,55 +1,63 @@
 .about-container {
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem; // Vienododi atstumai iš kairės ir dešinės
-  margin: 0 auto; // Centruoja horizontaliai
-  margin-top: 3rem;
-  padding-top: 3rem;
+  padding: 0 1rem;
+  margin: 9rem auto; // Centruotas automatiškai
+  background-color: rgba(255, 255, 255, 0.6); // Permatomas fonas
+  backdrop-filter: blur(8px); // Šiek tiek stipresnis suliejimas
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out; // Suteikia sklandesnį perėjimą keičiantis ekranui
 }
 
 .about-container p {
   text-align: justify;
   text-indent: 1.5rem;
   font-family: var(--main-font);
+  color: var(--text-color);
   font-size: 1rem;
   hyphens: auto;
   overflow-wrap: break-word;
+  margin: 5px 0;
 }
 
+/* Planšetės (768px) */
 @media only screen and (min-width: 768px) {
   .about-container {
-    margin-top: 0;
-    padding-top: 2rem;
+    max-width: 700px;
+    margin: 11.5rem auto;
+    padding: 10px;
   }
   
   .about-container p {
-    font-size: 1.3rem;
-    text-indent: 3rem;
-    padding: 0 5.1rem;
+    font-size: 1.6rem;
+    text-indent: 2rem;
   }
 }
 
+/* Laptopai (1024px) */
 @media only screen and (min-width: 1024px) {
   .about-container {
-    margin-top: 3rem;
-    padding: 0 6rem;
+    max-width: 800px;
+    margin: 4.5rem auto;
   }
 
   .about-container p {
-    font-size: 1.4rem;
-    margin: 0.5rem;
+    font-size: 1.7rem;
+    text-indent: 3.5rem;
   }
 }
 
+/* Dideli ekranai (1440px) */
 @media only screen and (min-width: 1440px) {
   .about-container {
-    margin-top: 1.5rem;
-    padding: 0 17rem;
+    max-width: 1000px;
+    margin: 6rem auto;
   }
 
   .about-container p {
-    font-size: 1.6rem;
-    text-indent: 4rem;
+    font-size: 2.2rem;
+    text-indent: 5rem;
   }
 }

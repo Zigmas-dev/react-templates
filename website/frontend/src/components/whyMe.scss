@@ -1,63 +1,80 @@
 .why-me {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 1rem;
-    margin: 0 auto;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    text-align: center;
-  }
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 7.5rem auto; // Centruotas automatiškai
+  background-color: rgba(255, 255, 255, 0.6); // Permatomas fonas
+  backdrop-filter: blur(8px); // Šiek tiek stipresnis suliejimas
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out; // Suteikia sklandesnį perėjimą keičiantis ekranui
+}
   
+.why-me h2 {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  margin: 0;
+  margin-bottom: 0.8rem;
+}
+  
+.why-me p {
+  text-align: justify;
+  text-indent: 1.5rem;
+  font-family: var(--main-font);
+  color: var(--text-color);
+  font-size: 1rem;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  margin: 5px 0;
+}
+  
+@media only screen and (min-width: 768px) {
+  .why-me {
+    max-width: 700px;
+    margin: 11rem auto;
+    padding: 10px;
+  }
+
   .why-me h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.1rem;
+  }
+    
+  .why-me p {
+    font-size: 1.6rem;
+    text-indent: 2rem;
+  }
+}
+  
+@media only screen and (min-width: 1024px) {
+  .why-me {
+    max-width: 800px;
+    margin: 4.5rem auto;
+  }
+
+  .why-me h2 {
+    font-size: 2.1rem;
   }
   
   .why-me p {
-    text-align: justify;
-    text-indent: 1.5rem;
-    font-family: var(--main-font);
-    font-size: 1rem;
-    hyphens: auto;
-    overflow-wrap: break-word;
-    margin: 0.5rem;
+    font-size: 1.7rem;
+    text-indent: 3.5rem;
+  }
+}
+  
+@media only screen and (min-width: 1440px) {
+  .why-me {
+    max-width: 1000px;
+    margin: 6rem auto;
+  }
+
+  .why-me h2 {
+    font-size: 3rem;
   }
   
-  @media only screen and (min-width: 768px) {
-    .why-me {
-      margin-top: 0;
-      padding-top: 2rem;
-    }
-    
-    .why-me p {
-      font-size: 1.3rem;
-      text-indent: 3rem;
-      padding: 0 5.1rem;
-    }
+  .why-me p {
+    font-size: 2.2rem;
+    text-indent: 5rem;
   }
-  
-  @media only screen and (min-width: 1024px) {
-    .why-me {
-      margin-top: 3rem;
-      padding: 0 6rem;
-    }
-  
-    .why-me p {
-      font-size: 1.4rem;
-      margin: 0.5rem;
-    }
-  }
-  
-  @media only screen and (min-width: 1440px) {
-    .why-me {
-      margin-top: 1.5rem;
-      padding: 0 17rem;
-    }
-  
-    .why-me p {
-      font-size: 1.6rem;
-      text-indent: 4rem;
-    }
-  }
+}
   

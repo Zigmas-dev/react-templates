@@ -27,10 +27,10 @@ const Header = () => {
        <Link to="/" onClick={closeMenu}>Pagrindinis</Link>
       </li>
       <li>
-       <Link to="/apie-mane" onClick={closeMenu}>Apie mane</Link>
+       <Link to="/paslaugos" onClick={closeMenu}>Paslaugos</Link>
       </li>
       <li>
-       <Link to="/paslaugos" onClick={closeMenu}>Paslaugos</Link>
+       <Link to="/kontaktai" onClick={closeMenu}>Kontaktai</Link>
       </li>
      </ul>
       </nav>

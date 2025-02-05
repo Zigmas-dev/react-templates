@@ -1,10 +1,14 @@
 .values-container {
+  max-width: 300px;
   display: flex;
   flex-direction: column;
-  padding: 0 1rem; /* Lygiaverčiai atstumai iš kairės ir dešinės */
-  margin: 0 auto; /* Centruoja horizontaliai */
-  padding-top: 2rem;
-  margin-top: 2rem;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 9rem auto; // Centruotas automatiškai
+  background-color: rgba(255, 255, 255, 0.6); // Permatomas fonas
+  backdrop-filter: blur(8px); // Šiek tiek stipresnis suliejimas
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out; // Suteikia sklandesnį perėjimą keičiantis ekranui
 }
 
 .values-container p,
@@ -12,10 +16,11 @@
   text-align: justify;
   text-indent: 1.5rem;
   font-family: var(--main-font);
+  color: var(--text-color);
   font-size: 1rem;
   hyphens: auto;
   overflow-wrap: break-word;
-  min-width: 200px;
+  margin: 5px 0;
 }
 
 .values-container ul {
@@ -33,21 +38,15 @@
 
 @media only screen and (min-width: 768px) {
   .values-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0 4rem; 
-    margin: 0 auto; 
-    padding-top: 1.5rem;
-    margin-top: 1.5rem;
+    max-width: 700px;
+    margin: 11rem auto;
+    padding: 10px;
   }
 
   .values-container p,
   .values-container li {
-    text-align: justify;
-    text-indent: 2rem;
-    font-size: 1.5rem;
-    hyphens: auto;
-    overflow-wrap: break-word;
+    font-size: 1.7rem;
+    text-indent: 4rem;
   }
 
   .values-container ul {
@@ -66,27 +65,24 @@
 
 @media only screen and (min-width: 1024px) {
   .values-container {
-    padding: 0 8rem; 
-    margin: 0 auto; 
-    margin-top: 2rem;
-    padding-top: 2rem;
+    max-width: 800px;
+    margin: 4rem auto;
   }
 
   .values-container li {
-    font-size: 1.6rem;
-    text-indent: 3rem;
+    font-size: 1.8rem;
+    text-indent: 3.5rem;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .values-container {
-    padding: 0 16rem; 
-    margin: 0 auto; 
-    margin-top: 2rem;
-    padding-top: 2rem;
+    max-width: 1000px;
+    margin: 6rem auto;
   }
 
   .values-container li {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    text-indent: 5rem;
   }
 }

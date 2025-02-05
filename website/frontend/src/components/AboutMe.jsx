@@ -1,5 +1,4 @@
 import { FaReact, FaJs, FaNode } from "react-icons/fa";
-import logo from "../assets/CodeAcademy_logo.png";
 import "./aboutMe.scss";
 
 const AboutMe = () => {
@@ -10,13 +9,6 @@ const AboutMe = () => {
           <p>
             Sveiki! Aš esu Zigmas, pradedantis junior programuotojas ir
             freelanceris, dirbantis tiek frontend, tiek backend srityse.
-            Baigiau{" "}
-            <img
-              src={logo}
-              alt="CodeAcademy-logo"
-              style={{ height: "2em", verticalAlign: "middle" }}
-            />{" "}
-            kursus.
           </p>
           <p>
             Nors mano kelias į programavimą tik prasideda, nuolatinis mokymasis
