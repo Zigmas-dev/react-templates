@@ -1,0 +1,155 @@
+.services-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px; // Mobile-first
+    padding: 0 1rem;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap; /* Mobile pirmumo eilė */
+    gap: 1rem; 
+    justify-content: center;
+}
+
+.service-item {
+    flex: 1 1 calc(100% - 1rem); // Mobile plotis
+    max-width: 100%;
+    height: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        color: #ff5733;
+        transition: color 0.3s ease;
+        margin-top: 5px;
+    }
+
+    .service-title {
+        font-size: 1.8rem;
+        color: #333;
+        margin: 0;
+        font-family: var(--main-font);
+    }
+
+    .service-description {
+        font-size: 1.1rem;
+        color: #666;
+        font-family: var(--main-font);
+    }
+}
+
+/* Tablet stiliai */
+@media only screen and (min-width: 768px) {
+    .services-container {
+        max-width: 800px;
+        margin: 7rem auto;
+    }
+
+    .services-list {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .service-item {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        padding: 0;
+        height: auto;
+    }
+
+    .service-item .service-icon {
+        padding: 1rem;
+        margin: 1rem auto;
+        font-size: 3rem;
+    }
+
+    .service-item .service-title {
+        font-size: 2.3rem;
+    }
+
+    .service-item .service-description {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+        ;
+    }
+}
+
+/* Desktop stiliai */
+@media only screen and (min-width: 1024px) {
+    .services-container {
+        max-width: 1200px;
+        margin: 5rem auto;
+    }
+
+    .services-list {
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    .service-item {
+        flex: 1 1 calc(33.33% - 1rem);
+        max-width: calc(33.33% - 1rem);
+        height: auto;
+        
+    }
+
+    .service-item .service-icon {
+        font-size: 3rem;
+    }
+
+    .service-item .service-title {
+        font-size: 2.4rem;
+    }
+
+    .service-item .service-description {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Large Desktop stiliai */
+@media only screen and (min-width: 1440px) {
+    .services-container {
+        max-width: 1800px;
+        height: auto;
+        margin: 7.5rem auto;
+    }
+
+    .services-list {
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    .service-item {
+        flex: 1 1 calc(33.33% - 2rem);
+        max-width: calc(33.33% - 2rem);
+    }
+
+    .service-item .service-icon {
+        font-size: 6rem;
+    }
+
+    .service-item .service-title {
+        font-size: 3.3rem;
+    }
+
+    .service-item .service-description {
+        font-size: 2.7rem;
+    }
+}
