@@ -3,7 +3,9 @@ import "./services.scss";
 
 const Services = () => {
   return (
-    <ServiceItem />
+    <div className="services-container">
+      <ServiceItem />
+    </div>
   )
 };
 

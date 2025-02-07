@@ -27,7 +27,7 @@
 
     .logo-text {
       font-family: var(--main-font);
-      font-size: 1.5rem; // Mobile-first
+      font-size: 1.5rem;
       padding: 10px;
       color: var(--font-color);
     }
@@ -92,17 +92,20 @@
   .header{
     .logo {
       .logo-text {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
       }
     }
 
     nav {
       display: flex;
       position: static;
-
+      
       ul {
         flex-direction: row;
-        gap: 1rem;
+        gap: 0.7rem;
+        li a {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -112,18 +115,21 @@
   }
 }
 
-//Laptop
+// Laptop
 @media only screen and (min-width: 1024px) {
   .header {
     .logo {
       .logo-text {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
     }
 
     nav {
       ul {
-        gap: 1.5rem;
+        gap: 1rem;
+        li a {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -140,7 +146,50 @@
 
     nav {
       ul {
+        gap: 1rem;
+        li a {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+// 4K Screens
+@media only screen and (min-width: 1920px) {
+  .header {
+    .logo {
+      .logo-text {
+        font-size: 2.5em;
+      }
+    }
+
+    nav {
+      ul {
+        gap: 1rem;
+        li a {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+// 5K Screens
+@media only screen and (min-width: 2560px) {
+  .header {
+    .logo {
+      .logo-text {
+        font-size: 3.5rem;
+      }
+    }
+
+    nav {
+      ul {
         gap: 2rem;
+        li a {
+          font-size: 1.8rem;
+        }
       }
     }
   }

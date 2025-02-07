@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
-  margin: 9rem auto; // Centruotas automatiškai
+  padding: 1rem 1rem;
+  margin: 7.5rem auto; // Centruotas automatiškai
   background-color: rgba(255, 255, 255, 0.6); // Permatomas fonas
   backdrop-filter: blur(8px); // Šiek tiek stipresnis suliejimas
   border-radius: 10px;
@@ -26,8 +26,7 @@
 @media only screen and (min-width: 768px) {
   .about-container {
     max-width: 700px;
-    margin: 11.5rem auto;
-    padding: 10px;
+    margin: 13rem auto;
   }
   
   .about-container p {
@@ -59,5 +58,31 @@
   .about-container p {
     font-size: 2.2rem;
     text-indent: 5rem;
+  }
+}
+
+/* Dideli ekranai (1920px) */
+@media only screen and (min-width: 1920px) {
+  .about-container {
+    max-width: 1200px;
+    margin: 5rem auto;
+  }
+
+  .about-container p {
+    font-size: 2rem;
+    text-indent: 6rem;
+  }
+}
+
+/* Labai dideli ekranai (2560px) */
+@media only screen and (min-width: 2560px) {
+  .about-container {
+    max-width: 1600px;
+    margin: 8rem auto;
+  }
+
+  .about-container p {
+    font-size: 2.6rem;
+    text-indent: 7rem;
   }
 }

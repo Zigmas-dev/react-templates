@@ -24,7 +24,7 @@ const servicesData = [
 
 const ServiceItem = () => {
   return (
-    <div className="services-container">
+    <div className="services-item-container">
       <div className="services-list">
         {servicesData.map((service) => (
           <div key={service.id} className="service-item">

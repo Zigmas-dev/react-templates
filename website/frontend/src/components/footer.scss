@@ -1,73 +1,73 @@
+:root {
+  --padding: 0.5rem 0;
+}
+
 .footer-container {
   display: flex;
   flex-direction: column;
   background-color: #1A0F1F;
   width: 100%;
-  min-width: 320px; // Minimalus plotis
-  height: auto; // Aukstis prisitaiko pagal turini
-  padding: 10px 0; // Vidines parastes maziems ekranams
+  height: auto;
+  padding: var(--padding);
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 10; // Uztikrina, kad footer butu virs kitu elementu
+  z-index: 10;
 
   p {
     font-size: 1rem;
     font-family: var(--main-font);
     color: var(--font-color);
     text-align: center;
-    margin: 5px 0; // Sumazinta apatine ir virsutine paraste
+    margin: 0 auto;
   }
 
   .icon-container {
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
-    gap: 5px;
+    margin: 0.3rem auto;
+    gap: 0.5rem;
     justify-content: center;
 
     .icon {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
 }
 
 @media only screen and (min-width: 768px) {
   .footer-container {
-    padding: 15px 0; /* Didesnės vidinės paraštės */
-    height: 80px; /* Fiksuotas aukštis platesniems ekranams */
-    
+    padding: var(--padding);
+
     p {
-      font-size: 1.2rem; /* Šiek tiek didesnis šriftas */
+      font-size: 1.3rem;
     }
-    
+
     .icon-container {
-      margin-top: 10px; /* Didesnis tarpas virš ikonų */
-      gap: 12px; /* Platesnis tarpas tarp ikonų */
-          
+      gap: 0.8rem;
+
       .icon {
-        font-size: 1.5rem; /* Didesnis ikonų dydis */
+        font-size: 1.3rem;
       }
     }
   }
 }
-    
+
 @media only screen and (min-width: 1024px) {
- .footer-container {
-    padding: 10px 0; 
-    height: 70px; 
+  .footer-container {
+    padding: var(--padding);
 
     p {
-      font-size: 1.4rem; 
+      font-size: 1.4rem;
     }
-    
+
     .icon-container {
-      gap: 15px; 
-    
+      gap: 1rem;
+
       .icon {
-        font-size: 2rem; 
+        font-size: 1.4rem;
       }
     }
   }
@@ -75,19 +75,55 @@
 
 @media only screen and (min-width: 1440px) {
   .footer-container {
-    padding: 15px 0;
-    height: 80px;
-   
+    padding: var(--padding);
+
     p {
-      font-size: 1.6rem; /* Dar didesnis šriftas plačiaekraniams įrenginiams */
+      font-size: 1.6rem;
     }
-       
+
     .icon-container {
-      gap: 20px; /* Didesnis tarpas tarp ikonų */
-       
+      gap: 1.2rem;
+
       .icon {
-        font-size: 2.5rem; /* Didesnių ikonų rodymas plačiaekraniams */
+        font-size: 1.6rem;
       }
     }
   }
 }
+
+@media only screen and (min-width: 1920px) {
+  .footer-container {
+    padding: var(--padding);
+
+    p {
+      font-size: 1.8rem;
+    }
+
+    .icon-container {
+      gap: 1.3rem;
+
+      .icon {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .footer-container {
+    padding: 25px 0;
+
+    p {
+      font-size: 2.5rem;
+    }
+
+    .icon-container {
+      gap: 1.8rem;
+
+      .icon {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+

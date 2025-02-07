@@ -15,7 +15,7 @@ const Footer = () => {
           <FaNode color="#83CD29" />
         </div>
         <div className="icon">
-          <FaGithub color="#181717" />
+          <FaGithub color="#FFFFFF" />
         </div>
         <div className="icon">
           <FaFacebook color="#1877F2" />
