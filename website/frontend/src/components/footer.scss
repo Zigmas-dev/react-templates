@@ -15,115 +15,120 @@
   bottom: 0;
   left: 0;
   z-index: 10;
+}
 
-  p {
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0.3rem auto;
+  gap: 0.5rem;
+  justify-content: center;
+    
+  .icon {
     font-size: 1rem;
-    font-family: var(--main-font);
-    color: var(--font-color);
-    text-align: center;
-    margin: 0 auto;
   }
+}
 
-  .icon-container {
-    display: flex;
-    flex-direction: row;
-    margin: 0.3rem auto;
-    gap: 0.5rem;
-    justify-content: center;
-
-    .icon {
-      font-size: 1rem;
-    }
-  }
+.footer-container p {
+  font-size: 1rem;
+  font-family: var(--main-font);
+  color: var(--font-color);
+  text-align: center;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 768px) {
   .footer-container {
     padding: var(--padding);
+  }
 
-    p {
+  .icon-container {
+    gap: 0.8rem;
+
+    .icon {
       font-size: 1.3rem;
     }
+  }
 
-    .icon-container {
-      gap: 0.8rem;
-
-      .icon {
-        font-size: 1.3rem;
-      }
-    }
+  .footer-container p {
+    font-size: 1.3rem;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .footer-container {
     padding: var(--padding);
+  }
 
-    p {
+  .icon-container {
+    gap: 1rem;
+
+    .icon {
       font-size: 1.4rem;
     }
+  }
 
-    .icon-container {
-      gap: 1rem;
-
-      .icon {
-        font-size: 1.4rem;
-      }
-    }
+  .footer-container p {
+    font-size: 1.4rem;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .footer-container {
     padding: var(--padding);
+  }
 
-    p {
+  .icon-container {
+    gap: 1.2rem;
+    
+    .icon {
       font-size: 1.6rem;
     }
+  }
 
-    .icon-container {
-      gap: 1.2rem;
-
-      .icon {
-        font-size: 1.6rem;
-      }
-    }
+  .footer-container p {
+    font-size: 1.6rem;
   }
 }
+
 
 @media only screen and (min-width: 1920px) {
   .footer-container {
     padding: var(--padding);
+  }
 
-    p {
+  
+  .icon-container {
+    gap: 1.3rem;
+
+    .icon {
       font-size: 1.8rem;
     }
+  }
 
-    .icon-container {
-      gap: 1.3rem;
-
-      .icon {
-        font-size: 1.8rem;
-      }
-    }
+  .footer-container p {
+    font-size: 1.8rem;
   }
 }
+
 
 @media only screen and (min-width: 2560px) {
   .footer-container {
     padding: 25px 0;
+  }
 
-    p {
+  
+  .icon-container {
+    gap: 1.8rem;
+
+    .icon {
       font-size: 2.5rem;
     }
+  }
 
-    .icon-container {
-      gap: 1.8rem;
-
-      .icon {
-        font-size: 2.5rem;
-      }
-    }
+  .footer-container p {
+    font-size: 2.5rem;
   }
 }
+
 

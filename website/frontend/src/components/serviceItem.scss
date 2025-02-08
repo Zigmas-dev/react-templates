@@ -86,7 +86,7 @@
 
 @media only screen and (min-width: 1024px) {
  .services-item-container {
-    margin: 4.5rem auto;
+    margin: 5rem auto;
   }
 
   .services-list {
@@ -97,11 +97,11 @@
   .service-item {
     flex: 1 1 calc(33.33% - 1rem);
     max-width: calc(33.33% - 1rem);
-    padding: 1rem 0; 
   }
 
   .service-item .service-icon {
     font-size: 2rem;
+    margin: 0;
   }
 
   .service-item .service-title {
