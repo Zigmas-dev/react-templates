@@ -1,10 +1,13 @@
 .about-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // Centruoja tiek horizontaliai, tiek vertikaliai
   max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem 1rem;
-  margin: 7.5rem auto; // Centruotas automatiškai
   background-color: rgba(255, 255, 255, 0.6); // Permatomas fonas
   backdrop-filter: blur(8px); // Šiek tiek stipresnis suliejimas
   border-radius: 10px;
@@ -26,7 +29,6 @@
 @media only screen and (min-width: 768px) {
   .about-container {
     max-width: 700px;
-    margin: 13rem auto;
   }
   
   .about-container p {
@@ -39,7 +41,7 @@
 @media only screen and (min-width: 1024px) {
   .about-container {
     max-width: 800px;
-    margin: 2.5rem auto;
+    
   }
 
   .about-container p {
@@ -52,7 +54,7 @@
 @media only screen and (min-width: 1440px) {
   .about-container {
     max-width: 1000px;
-    margin: 6rem auto;
+    
   }
 
   .about-container p {
@@ -65,7 +67,7 @@
 @media only screen and (min-width: 1920px) {
   .about-container {
     max-width: 800px;
-    margin: 6rem auto;
+    
   }
 
   .about-container p {
@@ -78,7 +80,7 @@
 @media only screen and (min-width: 2560px) {
   .about-container {
     max-width: 1600px;
-    margin: 8rem auto;
+   
   }
 
   .about-container p {

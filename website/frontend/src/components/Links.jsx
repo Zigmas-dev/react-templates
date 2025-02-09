@@ -1,18 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import AboutMe from "./AboutMe";
 import Values from "./Values";
 import WhyMe from "./WhyMe";
 import "./links.scss";
 
-const Links = () => {
+const Links = ({ setIsHeroVisible }) => {
   const [activeComponent, setActiveComponent] = useState(null);
+
+  const handleClick = (component) => {
+    setActiveComponent(activeComponent === component ? null : component);
+    setIsHeroVisible(false); // Paspaudus nuorodą, paslepia hero-container
+  };
+
+  // Kai visi komponentai užsidaro (activeComponent === null), vėl rodomas hero-container
+  useEffect(() => {
+    if (activeComponent === null) {
+      setIsHeroVisible(true);
+    }
+  }, [activeComponent, setIsHeroVisible]);
 
   return (
     <div>
       <nav className="links" role="navigation" aria-label="Pagrindinė navigacija">
         <a
           href="#"
-          onClick={(e) => { e.preventDefault(); setActiveComponent(activeComponent === "about" ? null : "about"); }}
+          onClick={(e) => { e.preventDefault(); handleClick("about"); }}
           aria-current={activeComponent === "about" ? "page" : undefined}
           aria-expanded={activeComponent === "about"}
           id="about-link"
@@ -21,7 +34,7 @@ const Links = () => {
         </a>
         <a
           href="#"
-          onClick={(e) => { e.preventDefault(); setActiveComponent(activeComponent === "values" ? null : "values"); }}
+          onClick={(e) => { e.preventDefault(); handleClick("values"); }}
           aria-current={activeComponent === "values" ? "page" : undefined}
           aria-expanded={activeComponent === "values"}
           id="values-link"
@@ -30,7 +43,7 @@ const Links = () => {
         </a>
         <a
           href="#"
-          onClick={(e) => { e.preventDefault(); setActiveComponent(activeComponent === "why-me" ? null : "why-me"); }}
+          onClick={(e) => { e.preventDefault(); handleClick("why-me"); }}
           aria-current={activeComponent === "why-me" ? "page" : undefined}
           aria-expanded={activeComponent === "why-me"}
           id="why-me-link"
@@ -52,6 +65,11 @@ const Links = () => {
       </div>
     </div>
   );
+};
+
+// Pridedame PropTypes validaciją
+Links.propTypes = {
+  setIsHeroVisible: PropTypes.func.isRequired,
 };
 
 export default Links;

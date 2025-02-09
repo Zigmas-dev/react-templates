@@ -1,14 +1,18 @@
 .hero-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // Centruoja tiek horizontaliai, tiek vertikaliai
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: var(--main-font);
   color: var(--font-color);
-  text-align: center; // Centruoja tekstą
-  margin: 8rem auto; // Centruoja horizontaliai, jei reikia
+  text-align: center;
+  width: 100%; // Užtikrina, kad elementas neperžengtų ekrano ribų
 }
-    
+
 .hero-container h1 {
   font-size: 2rem; // Mobile-first
 }
@@ -19,10 +23,6 @@
 }
   
 @media (min-width: 768px) {
-  .hero-container {
-    margin: 18rem auto;
-  }
-
   .hero-container h1 {
     font-size: 2.2rem;
   }
@@ -33,10 +33,6 @@
 }
 
 @media (min-width: 1024px) {
-  .hero-container {
-    margin: 3.5rem auto;
-  }
-  
   .hero-container h1 {
     font-size: 3rem;
   }
@@ -47,10 +43,6 @@
 }
 
 @media (min-width: 1440px) {
-  .hero-container {
-    margin: 8rem auto;
-  }
-  
   .hero-container h1 {
     font-size: 3rem;
   }
@@ -61,10 +53,6 @@
 }
 
 @media (min-width: 1920px) {
-  .hero-container {
-    margin: 8rem auto;
-  }
-  
   .hero-container h1 {
     font-size: 4rem;
   }
@@ -75,10 +63,6 @@
 }
 
 @media (min-width: 2560px) {
-  .hero-container {
-    margin: 10rem auto;
-  }
-  
   .hero-container h1 {
     font-size: 5rem;
   }
