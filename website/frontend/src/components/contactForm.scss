@@ -1,113 +1,147 @@
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5rem auto;
-    width: 90%;
-    max-width: 500px;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  
-  .form-group {
-    width: 100%;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-  
-    label {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-  
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease-in-out;
-  
-      &:focus {
-        border-color: #007bff;
-        outline: none;
-      }
-    }
-  
-    textarea {
-      resize: none;
-    }
-  }
-  
-  .error {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 0.3rem;
-  }
-  
-  .submit-btn {
-    background: #56c596;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--main-font);
+  color: var(--font-color);
+  width: 85%;
+  background: transparent;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-  
-    &:hover {
-      background: #1b5e20;
-    }
-  
-    &:disabled {
-      background: #ccc;
-      cursor: not-allowed;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
     }
   }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #56c596;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    background: #1b5e20;
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
+
   
   /* Media užklausos */
-  @media (min-width: 768px) {
-    .contact-form {
-      padding: 2rem;
-    }
+@media (min-width: 768px) {
+  .contact-form {
+    max-width: 500px;
   }
+
+  .contact-form h2 {
+    font-size: 2rem;
+  }
+
+  .form-group {
+    width: 400px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .submit-btn {
+    font-size: 1.5rem;
+  }
+}
   
-  @media (min-width: 1024px) {
-    .contact-form {
-      padding: 2.5rem;
-    }
+@media (min-width: 1024px) {
+  .contact-form {
+    max-width: 500px;
   }
+
+  .contact-form h2{
+    font-size: 2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
   
-  @media (min-width: 1440px) {
-    .contact-form {
-      padding: 3rem;
-    }
+@media (min-width: 1440px) {
+  .contact-form h2{
+    font-size: 2rem;
   }
+}
   
-  @media (min-width: 1920px) {
-    .contact-form {
-      padding: 3.5rem;
-    }
+@media (min-width: 1920px) {
+  .contact-form h2{
+    font-size: 2rem;
   }
-  
-  @media (min-width: 2560px) {
-    .contact-form {
-      padding: 4rem;
-    }
-  }
+}
   
