@@ -1,0 +1,113 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem auto;
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease-in-out;
+  
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+    }
+  
+    textarea {
+      resize: none;
+    }
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+  
+  .submit-btn {
+    background: #56c596;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  
+    &:hover {
+      background: #1b5e20;
+    }
+  
+    &:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  }
+  
+  /* Media užklausos */
+  @media (min-width: 768px) {
+    .contact-form {
+      padding: 2rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .contact-form {
+      padding: 2.5rem;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .contact-form {
+      padding: 3rem;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    .contact-form {
+      padding: 3.5rem;
+    }
+  }
+  
+  @media (min-width: 2560px) {
+    .contact-form {
+      padding: 4rem;
+    }
+  }
+  
