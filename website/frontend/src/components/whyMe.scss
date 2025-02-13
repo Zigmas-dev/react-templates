@@ -3,7 +3,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); // Centruoja tiek horizontaliai, tiek vertikaliai
-  max-width: 300px;
+  min-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@
 }
   
 .why-me h2 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   color: var(--text-color);
   margin: 0;
   margin-bottom: 0.5rem;
@@ -26,7 +26,7 @@
   text-indent: 1.5rem;
   font-family: var(--main-font);
   color: var(--text-color);
-  font-size: 1rem;
+  font-size: 1.2rem;
   hyphens: auto;
   overflow-wrap: break-word;
   margin: 5px 0;

@@ -89,6 +89,40 @@
   }
 }
 
+.icon-name {
+  color: #1f8a70; /* Pvz., žalia spalva */
+}
+
+.icon-email {
+  color: #ff6600; /* Oranžinė spalva */
+}
+
+.icon-phone {
+  color: #007bff; /* Mėlyna spalva */
+}
+
+.icon-message {
+  color: #e60000; /* Raudona spalva */
+}
+
+.icon-send {
+  color: #ffcc00; /* Auksinė spalva */
+}
+
+
+.spinner {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
   
   /* Media užklausos */
 @media (min-width: 768px) {
