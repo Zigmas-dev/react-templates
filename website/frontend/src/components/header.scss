@@ -65,10 +65,11 @@
       display: block;
       position: absolute;
       top: 60px;
-      right: 20px;
+      left: 50%;
+      transform: translate(-50%);
       background-color: none;
-      text-align: right;
-      padding: 5px;
+      text-align: center;
+      
       
       ul {
         padding: 5px 0;

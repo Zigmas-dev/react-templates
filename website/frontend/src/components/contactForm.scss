@@ -1,8 +1,8 @@
 .contact-form {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  //position: fixed;
+  //top: 50%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@
   color: var(--font-color);
   width: 85%;
   background: transparent;
-  padding: 1rem;
+  //padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
