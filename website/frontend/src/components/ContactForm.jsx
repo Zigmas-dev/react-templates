@@ -106,7 +106,7 @@ const ContactForm = () => {
               ) : (
                 <FaPaperPlane className="icon-send" aria-hidden="true" />
               )}
-              {loading ? "Siunčiama..." : "Išsiųsti"}
+              {loading ? "Siunčiama..." : "Siųsti"}
             </button>
 
             {success && <div className="success-message">{success}</div>}
