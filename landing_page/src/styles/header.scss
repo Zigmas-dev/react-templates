@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    color: white;
+    padding: 1rem;
+  
+    nav ul {
+      display: flex;
+      list-style: none;
+  
+      li {
+        margin-left: 20px;
+  
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
