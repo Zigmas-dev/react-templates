@@ -1,0 +1,19 @@
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-family: var(--main-font);
+    font-size: 8rem;
+    color: var(--font-color);
+    margin: 0;
+  }
+
+  h4 {
+    font-family: var(--main-font);
+    font-size: 4rem;
+    color: var(--font-color);
+    margin: 0;
+  }
+}
