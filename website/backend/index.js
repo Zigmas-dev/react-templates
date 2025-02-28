@@ -27,10 +27,11 @@ app.post("/send-email", async (req, res) => {
   const { name, email, phone, message } = req.body;
 
   const mailOptions = {
-    from: email,
-    to: process.env.EMAIL_USER,  // Siųsti į tavo el. paštą
+    from: `Kontaktų forma <${process.env.EMAIL_USER}>`,
+    to: process.env.EMAIL_USER,
     subject: "Nauja žinutė iš kontaktų formos",
-    text: `📩 Nauja žinutė:\n\n👤 Vardas: ${name}\n📧 El. paštas: ${email}\n📞 Telefonas: ${phone}\n📝 Žinutė:\n${message}`,
+    text: `Vardas: ${name}\nEl. paštas: ${email}\nTelefonas: ${phone}\nŽinutė:\n${message}`,
+    replyTo: email,
   };
 
   try {
