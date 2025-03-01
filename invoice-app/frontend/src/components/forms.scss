@@ -3,6 +3,7 @@
   max-width: 90%;
   padding: 1.5rem;
   padding-top: 5px;
+  padding-bottom: 5px;
   background: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -83,6 +84,18 @@
         background: #0056b3;
       }
     }
+  }
+
+  p {
+    font-family: var(--main-font);
+  }
+
+  .link-button {
+    font-family: var(--main-font);
+    border: none;
+    background: none;
+    text-decoration: none;
+    cursor: pointer;
   }
 }
   

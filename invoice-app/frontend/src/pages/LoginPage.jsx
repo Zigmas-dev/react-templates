@@ -1,11 +1,18 @@
+import { useState } from "react";
 import Login from "../components/Login";
+import Register from "../components/Register";
 import "./loginPage.scss";
 
 const LoginPage = () => {
+  const [isRegistering, setIsRegistering] = useState(false);
+
   return (
     <div className="login-container">
-      <h2>Reikia prisijungti</h2>
-      <Login />
+      {isRegistering ? (
+        <Register onLoginClick={() => setIsRegistering(false)} />
+      ) : (
+        <Login onRegisterClick={() => setIsRegistering(true)} />
+      )}
     </div>
   );
 };
