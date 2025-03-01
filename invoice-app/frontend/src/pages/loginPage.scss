@@ -1,0 +1,13 @@
+.login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10rem auto;
+  padding-bottom: 2rem;
+  background: blue;
+
+  h2 {
+    color: white;
+  }
+}
