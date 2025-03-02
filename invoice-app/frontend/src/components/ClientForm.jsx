@@ -1,9 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FaBuilding, FaBarcode, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import axios from "axios";
 import "./clientForm.scss";
 
-const ClientForm = ({ onSubmit }) => {
+const ClientForm = ({ onClientAdded }) => {
   const validationSchema = Yup.object({
     companyName: Yup.string().required("Įmonės pavadinimas privalomas"),
     companyCode: Yup.string().required("Įmonės kodas privalomas"),
@@ -13,11 +14,34 @@ const ClientForm = ({ onSubmit }) => {
     email: Yup.string().email("Neteisingas el. paštas").required("El. paštas privalomas"),
   });
 
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    console.log("📤 Siunčiami duomenys:", values);
+
+    try {
+      const response = await axios.post("http://localhost:3000/clients/add", values);
+      console.log("✅ Serverio atsakymas:", response.data);
+
+      // 🛠 Patikriname, ar onClientAdded yra perduotas kaip props
+      if (typeof onClientAdded === "function") {
+        onClientAdded(); // Atnaujinti klientų sąrašą po pridėjimo
+      }
+
+      resetForm();
+    } catch (error) {
+      console.error("❌ Klaida pridedant klientą:", error);
+      if (error.response) {
+        console.error("📩 Serverio klaida:", error.response.data);
+      }
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <Formik
       initialValues={{ companyName: "", companyCode: "", vatCode: "", address: "", phone: "", email: "" }}
       validationSchema={validationSchema}
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
         <Form className="client-form">
@@ -55,6 +79,11 @@ const ClientForm = ({ onSubmit }) => {
       )}
     </Formik>
   );
+};
+
+// 🛠 Jei komponentas naudojamas be onClientAdded, išvengiame klaidų
+ClientForm.defaultProps = {
+  onClientAdded: () => {}, // Tuščia funkcija, jei props nėra perduotas
 };
 
 export default ClientForm;
