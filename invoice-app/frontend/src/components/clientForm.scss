@@ -1,0 +1,56 @@
+.client-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      position: relative;
+      
+      .icon {
+        position: absolute;
+        left: 10px;
+        color: gray;
+      }
+      
+      input {
+        width: 100%;
+        padding: 10px 10px 10px 35px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+  
+      .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 2px;
+      }
+    }
+  
+    button {
+      padding: 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+  
+      &:hover {
+        background: #0056b3;
+      }
+  
+      &:disabled {
+        background: gray;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
