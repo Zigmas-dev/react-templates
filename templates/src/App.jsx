@@ -36,6 +36,7 @@ import Cart from "./components/Cart";
 import VatCalculator from "./components/VatCalculator";
 import InvoiceVatTool from "./components/InvoiceVatTool";
 import DarkMode from "./components/DarkMode";
+import Spinners from "./components/Spinners";
 import "./index.scss";
 
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
     <div>
       <Header />
       <DarkMode />
+      <Spinners />
       <Loader />
       <LanguageSelector />
       <Cart />
