@@ -21,7 +21,6 @@ const Login = ({ onRegisterClick }) => {
     try {
       const response = await axios.post("http://127.0.0.1:3000/auth/login", values);
       localStorage.setItem("token", response.data.token); // Išsaugome tokeną
-      alert("✅ Prisijungimas sėkmingas!");
 
       navigate("/main");
     } catch (error) {

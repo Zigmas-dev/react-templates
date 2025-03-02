@@ -1,10 +1,10 @@
-
+import Header from "../components/Header";
 import "./main.scss";
 
 const Main = () => {
   return (
     <div className="main-container">
-       <h1>Labas</h1>
+      <Header />
     </div>
   );
 };
