@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FaBuilding, FaBarcode, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import { BarLoader } from "react-spinners";
 import axios from "axios";
 import "./clientForm.scss";
 
 const ClientForm = ({ onClientAdded }) => {
+  const [successMessage, setSuccessMessage] = useState("");
+
   const validationSchema = Yup.object({
     companyName: Yup.string().required("Įmonės pavadinimas privalomas"),
     companyCode: Yup.string().required("Įmonės kodas privalomas"),
@@ -21,12 +25,13 @@ const ClientForm = ({ onClientAdded }) => {
       const response = await axios.post("http://localhost:3000/clients/add", values);
       console.log("✅ Serverio atsakymas:", response.data);
 
-      // 🛠 Patikriname, ar onClientAdded yra perduotas kaip props
       if (typeof onClientAdded === "function") {
-        onClientAdded(); // Atnaujinti klientų sąrašą po pridėjimo
+        onClientAdded();
       }
 
       resetForm();
+      setSuccessMessage("Sėkmingai įrašyta!");
+      setTimeout(() => setSuccessMessage(""), 3000);
     } catch (error) {
       console.error("❌ Klaida pridedant klientą:", error);
       if (error.response) {
@@ -74,16 +79,18 @@ const ClientForm = ({ onClientAdded }) => {
             <Field type="email" name="email" placeholder="El. paštas" />
             <ErrorMessage name="email" component="div" className="error" />
           </div>
-          <button type="submit" disabled={isSubmitting}>Pridėti klientą</button>
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? <BarLoader color="#fff" height={4} width={80} /> : "Pridėti klientą"}
+          </button>
+          {successMessage && <div className="success-message">{successMessage}</div>}
         </Form>
       )}
     </Formik>
   );
 };
 
-// 🛠 Jei komponentas naudojamas be onClientAdded, išvengiame klaidų
 ClientForm.defaultProps = {
-  onClientAdded: () => {}, // Tuščia funkcija, jei props nėra perduotas
+  onClientAdded: () => {},
 };
 
 export default ClientForm;
