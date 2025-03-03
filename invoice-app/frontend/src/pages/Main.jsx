@@ -1,21 +1,19 @@
 import { useState } from "react";
 import Header from "../components/Header";
-import NavBar from "../components/NavBar";
-import ClientForm from "../components/ClientForm";
 import InvoiceForm from "../components/InvoiceForm";
+import ClientForm from "../components/ClientForm";
 import "./main.scss";
 
 const Main = () => {
-  const [showClientForm, setShowClientForm] = useState(false); // Valdome formos rodymą
+  const [showClientForm, setShowClientForm] = useState(false);
 
   return (
     <div className="main-container">
-      <Header />
-      <NavBar onToggleClientForm={() => setShowClientForm((prev) => !prev)} /> {/* Perduodame funkciją */}
+      <Header setShowClientForm={setShowClientForm} /> {/* Perduodam funkciją į Header */}
       
-      {showClientForm && ( // Jei true, rodome formą
+      {showClientForm && (
         <div className="client-form-container">
-          <ClientForm onClientAdded={() => setShowClientForm(false)} />
+          <ClientForm onClientAdded={() => setShowClientForm(false)} /> {/* Uždaroma po pridėjimo */}
         </div>
       )}
 
