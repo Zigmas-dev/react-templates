@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Formik, Field, Form, FieldArray } from "formik";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { FaSave, FaBuilding, FaPlus } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
-import ClientModal from "./ClientModal";
 import "./invoiceForm.scss";
+import ClientModal from "./ClientModal";
 
 const InvoiceForm = ({ onSave }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -87,13 +87,7 @@ const InvoiceForm = ({ onSave }) => {
     setIsModalOpen(false);
   };
 
-  const handleSelectClient = (client) => {
-    Formik.setFieldValue("client.companyName", client.companyName);
-    Formik.setFieldValue("client.companyCode", client.companyCode);
-    Formik.setFieldValue("client.vatCode", client.vatCode);
-    Formik.setFieldValue("client.address", client.address);
-    Formik.setFieldValue("client.phone", client.phone);
-    Formik.setFieldValue("client.email", client.email);
+  const handleSelectClient = () => {
     handleCloseModal();
   };
 
@@ -112,7 +106,7 @@ const InvoiceForm = ({ onSave }) => {
           client: {
             companyName: "",
             companyCode: "",
-            pvmCode: "",
+            vatCode: "",
             address: "",
             phone: "",
             email: "",
@@ -142,7 +136,7 @@ const InvoiceForm = ({ onSave }) => {
                 <Field name="client.vatCode" type="text" disabled />
                 <Field name="client.address" type="text" disabled />
                 <Field name="client.phone" type="text" disabled />
-                <Field name="client.email" type="email" disabled />
+                <Field name="client.email" type="text" disabled />
 
                 <button type="button" className="add-client-button" onClick={handleOpenModal}>
                   Pridėti klientą
