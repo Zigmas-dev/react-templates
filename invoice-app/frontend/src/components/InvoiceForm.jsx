@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { Formik, Field, Form, FieldArray } from "formik";
 import PropTypes from "prop-types";
 import axios from "axios";
-import { FaSave, FaBuilding } from "react-icons/fa";
+import { FaSave, FaBuilding, FaPlus } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
+import ClientModal from "./ClientModal";
 import "./invoiceForm.scss";
 
 const InvoiceForm = ({ onSave }) => {
@@ -12,6 +13,7 @@ const InvoiceForm = ({ onSave }) => {
   const [invoiceNumber, setInvoiceNumber] = useState(
     localStorage.getItem("invoiceNumber") || "ZWD 25/0000"
   );
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchInvoiceNumber = async () => {
@@ -77,6 +79,24 @@ const InvoiceForm = ({ onSave }) => {
     }
   };
 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSelectClient = (client) => {
+    Formik.setFieldValue("client.companyName", client.companyName);
+    Formik.setFieldValue("client.companyCode", client.companyCode);
+    Formik.setFieldValue("client.vatCode", client.vatCode);
+    Formik.setFieldValue("client.address", client.address);
+    Formik.setFieldValue("client.phone", client.phone);
+    Formik.setFieldValue("client.email", client.email);
+    handleCloseModal();
+  };
+
   return (
     <div className="invoice-form">
       <Formik
@@ -117,12 +137,16 @@ const InvoiceForm = ({ onSave }) => {
 
               <div className="section client">
                 <h3><FaBuilding /> Klientas</h3>
-                <Field name="client.companyName" type="text" placeholder="Įmonės pavadinimas" />
-                <Field name="client.companyCode" type="text" placeholder="įmonės kodas" />
-                <Field name="client.pvmCode" type="text" placeholder="PVM kodas" />
-                <Field name="client.address" type="text" placeholder="Adresas" />
-                <Field name="client.phone" type="text" placeholder="Tel. numeris" />
-                <Field name="client.email" type="email" placeholder="El. paštas" />
+                <Field name="client.companyName" type="text" disabled />
+                <Field name="client.companyCode" type="text" disabled />
+                <Field name="client.vatCode" type="text" disabled />
+                <Field name="client.address" type="text" disabled />
+                <Field name="client.phone" type="text" disabled />
+                <Field name="client.email" type="email" disabled />
+
+                <button type="button" className="add-client-button" onClick={handleOpenModal}>
+                  Pridėti klientą
+                </button>
               </div>
             </div>
 
@@ -138,8 +162,9 @@ const InvoiceForm = ({ onSave }) => {
                       <button type="button" className="delete-button" onClick={() => remove(index)}>Pašalinti</button>
                     </div>
                   ))}
+
                   <button type="button" className="add-button" onClick={() => push({ name: "", quantity: 1, price: 0 })}>
-                    Pridėti paslaugą
+                    <FaPlus className="icon" /> Pridėti
                   </button>
                 </>
               )}
@@ -161,6 +186,10 @@ const InvoiceForm = ({ onSave }) => {
                 {isSubmitting ? <ClipLoader size={30} color="#000" /> : <FaSave />} Išsaugoti sąskaitą
               </button>
             </div>
+
+            {isModalOpen && (
+              <ClientModal onClose={handleCloseModal} onSelectClient={handleSelectClient} />
+            )}
           </Form>
         )}
       </Formik>

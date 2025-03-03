@@ -1,14 +1,22 @@
+.logout-button,
+.add-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .logout-button {
-    background: none;
-    border: none;
-    color: red;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .icon {
-    font-size: 1.5rem;
-  }
+  color: red;
+}
+
+.add-button {
+  color: green;
+}
+
+.icon {
+  font-size: 1.5rem;
+}

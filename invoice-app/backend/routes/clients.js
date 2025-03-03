@@ -4,7 +4,7 @@ const db = require("../config/db");
 
 // Pridėti naują klientą
 router.post("/add", async (req, res) => {
-  console.log("📩 Gautas užklausos kūnas:", req.body);
+  console.log(" Gautas užklausos kūnas:", req.body);
 
   let { companyName, companyCode, vatCode, address, phone, email } = req.body;
 
@@ -34,15 +34,26 @@ router.post("/add", async (req, res) => {
   }
 });
 
-// Gauti visus klientus
-router.get("/all", async (req, res) => {
+// Gauti klientus pagal paieškos kriterijus
+router.get("/search", async (req, res) => {
+  const { searchTerm } = req.query; // Gauname paieškos terminą iš užklausos parametrų
+  console.log(" Ieškomas klientas pagal:", searchTerm);
+
+  if (!searchTerm) {
+    console.log("❌ Paieškos terminas nepateiktas.");
+    return res.status(400).json({ message: "❌ Pateikite paieškos terminą." });
+  }
+
   try {
-    const [rows] = await db.query("SELECT * FROM klientai");
-    console.log("📜 Visi klientai:", rows);
+    const [rows] = await db.query(
+      "SELECT * FROM klientai WHERE Įmonės_pavadinimas LIKE ? OR Įmonės_kodas LIKE ? OR PVM_kodas LIKE ?",
+      [`%${searchTerm}%`, `%${searchTerm}%`, `%${searchTerm}%`]
+    );
+    console.log(" Rasti klientai:", rows);
     res.json(rows);
   } catch (error) {
-    console.error("❌ Klaida gaunant klientus:", error);
-    res.status(500).json({ message: "❌ Nepavyko gauti klientų duomenų." });
+    console.error("❌ Klaida ieškant klientų:", error);
+    res.status(500).json({ message: "❌ Nepavyko rasti klientų. Klaida: " + error.message });
   }
 });
 
@@ -50,7 +61,7 @@ router.get("/all", async (req, res) => {
 router.put("/update/:id", async (req, res) => {
   const { id } = req.params;
   console.log("✏️ Atnaujinamas klientas, ID:", id);
-  console.log("📩 Gautas užklausos kūnas:", req.body);
+  console.log(" Gautas užklausos kūnas:", req.body);
 
   let { companyName, companyCode, vatCode, address, phone, email } = req.body;
 
@@ -90,7 +101,7 @@ router.put("/update/:id", async (req, res) => {
 // Ištrinti klientą pagal ID
 router.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
-  console.log("🗑️ Trinamas klientas, ID:", id);
+  console.log("️ Trinamas klientas, ID:", id);
 
   // Patikriname ID
   if (!/^\d+$/.test(id)) {
