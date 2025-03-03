@@ -139,7 +139,7 @@ const InvoiceForm = ({ onSave }) => {
                 <Field name="client.email" type="text" disabled />
 
                 <button type="button" className="add-client-button" onClick={handleOpenModal}>
-                  Pridėti klientą
+                  <FaPlus className="icon" /> Pridėti klientą
                 </button>
               </div>
             </div>
@@ -158,7 +158,7 @@ const InvoiceForm = ({ onSave }) => {
                   ))}
 
                   <button type="button" className="add-button" onClick={() => push({ name: "", quantity: 1, price: 0 })}>
-                    <FaPlus className="icon" /> Pridėti
+                    <FaPlus className="icon" /> Pridėti paslaugą
                   </button>
                 </>
               )}

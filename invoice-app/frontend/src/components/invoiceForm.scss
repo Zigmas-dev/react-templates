@@ -10,20 +10,23 @@
 }
 
 h2 {
+  font-family: var(--main-font);
   text-align: center;
   color: #333;
   margin-bottom: 20px;
 }
 
 h3 {
+  font-family: var(--main-font);
+  font-size: 1.2rem;
   margin-top: 20px;
   color: #333;
-  font-size: 1.2rem;
 }
 
 label {
   display: block;
   font-weight: bold;
+  font-family: var(--main-font);
   margin-bottom: 5px;
   color: #555;
 }
@@ -39,6 +42,7 @@ input[type="number"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: var(--main-font);
   font-size: 1rem;
   color: #333;
   box-sizing: border-box;
@@ -49,21 +53,6 @@ input[type="email"]:focus,
 input[type="number"]:focus {
   border-color: #007bff;
   outline: none;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-label {
-  font-weight: normal;
-  color: #666;
-}
-
-input {
-  font-size: 1rem;
 }
 
 input[type="number"] {
@@ -123,12 +112,11 @@ input[type="number"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #0056b3;
   }
 }
-
 
 .service-item {
   display: flex;
@@ -153,6 +141,8 @@ input[type="number"] {
   background-color: #e74c3c; /* Raudona spalva */
   color: white;
   font-size: 1rem;
+  font-family: var(--main-font);
+  font-weight: bold;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -171,11 +161,14 @@ input[type="number"] {
   outline: none;
 }
 
-.add-button, .save-button {
+.add-button,
+.save-button,
+.add-client-button {
   width: 200px;
   padding: 10px;
   color: white;
   font-size: 1rem;
+  font-family: var(--main-font);
   font-weight: bold;
   border: none;
   border-radius: 4px;
@@ -187,71 +180,38 @@ input[type="number"] {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.add-button {
-  background-color: #3498db; /* Mėlyna spalva */
+.add-button, .add-client-button{
+    background-color: #3498db;
 }
 
-.add-button:hover {
-  background-color: #2980b9; /* Tamsesnė mėlyna spalva hover metu */
+.add-button:hover, .add-client-button:hover {
+    background-color: #2980b9;
+}
+
+.save-button {
+  background-color: #28a745;
+}
+
+.save-button:hover {
+  background-color: #218838;
 }
 
 .save-button svg {
   margin-right: 10px;
 }
 
-.save-button {
-  background-color: #28a745; /* Žalia spalva */
-}
-
-.save-button:hover {
-  background-color: #218838; /* Tamsesnė žalia spalva hover metu */
-}
-
 .button-wrapper {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Tarpas tarp mygtukų */
-  margin-top: 20px; /* Atskyrimas nuo kitų elementų */
-}
-
-.add-button,
-.save-button {
-  width: 200px;
-  padding: 10px;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.add-button {
-  background-color: #3498db; /* Mėlyna spalva */
-}
-
-.add-button:hover {
-  background-color: #2980b9; /* Tamsesnė mėlyna spalva hover metu */
-}
-
-.save-button {
-  background-color: #28a745; /* Žalia spalva */
-}
-
-.save-button:hover {
-  background-color: #218838; /* Tamsesnė žalia spalva hover metu */
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .invoice-number {
-  margin-top: 20px; /* Atstumas nuo ankstesnių elementų */
+  margin-top: 20px;
   display: flex;
-  flex-direction: column; /* Paverskite į stulpelinį išdėstymą */
-  align-items: flex-start; /* Pasirūpinkite, kad numeris būtų kairėje */
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .invoice-number label {
@@ -261,17 +221,17 @@ input[type="number"] {
 }
 
 .invoice-number input {
-  width: 200px; /* Nustatykite norimą plotį */
+  width: 200px;
   padding: 8px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #f9f9f9;
   color: #333;
-  text-align: center; /* Kad tekstas būtų centre */
+  text-align: center;
   box-sizing: border-box;
 }
 
 .invoice-number input:disabled {
-  background-color: #e9ecef; /* Užtikrinkite, kad negalima keisti, rodoma kaip pasyvūs įvesties laukai */
+  background-color: #e9ecef;
 }
