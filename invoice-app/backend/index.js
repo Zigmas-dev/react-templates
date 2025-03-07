@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const clientsRoutes = require("./routes/clients");
+const invoicesRouter = require("./routes/invoices");
 const protectedRoutes = require("./routes/protected");
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(cors({
 
 app.use("/auth", authRoutes);
 app.use("/clients", clientsRoutes);
+app.use("/invoices", invoicesRouter);
 app.use("/protected", protectedRoutes);
 
 const PORT = process.env.PORT || 3000;

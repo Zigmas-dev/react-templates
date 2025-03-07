@@ -8,3 +8,57 @@
 .client-form-container {
   margin: 3rem auto;
 }
+
+.invoice-preview-container {
+  // Pridėkite stilius, jei norite pakeisti peržiūros konteinerio išvaizdą
+  width: 100%; // Užtikrina, kad konteineris užimtų visą plotą
+}
+
+.preview-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+
+    &:last-child {
+      background-color: green;
+    }
+  }
+}
+
+@media print {
+  body > *:not(.invoice-preview-container) {
+    display: none;
+  }
+
+  .invoice-preview-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .preview-buttons {
+    display: none;
+  }
+
+  .invoice-preview {
+    page-break-after: always;
+
+    &:last-child {
+      page-break-after: auto;
+    }
+
+    .print-button {
+      display: none;
+    }
+  }
+}

@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import { FaSave, FaBuilding, FaPlus } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
-import "./invoiceForm.scss";
 import ClientModal from "./ClientModal";
+import "./invoiceForm.scss";
 
 const InvoiceForm = ({ onSave }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,7 +18,7 @@ const InvoiceForm = ({ onSave }) => {
   useEffect(() => {
     const fetchInvoiceNumber = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:3000/api/invoices");
+        const response = await axios.get("http://127.0.0.1:3000/invoices");
         const latestNumber = response.data.invoiceNumber || "ZWD 25/0000";
         setInvoiceNumber(latestNumber);
         localStorage.setItem("invoiceNumber", latestNumber);
@@ -55,7 +55,7 @@ const InvoiceForm = ({ onSave }) => {
         invoiceNumber: newInvoiceNumber,
       };
 
-      await axios.post("http://127.0.0.1:3000/api/invoices", invoiceData);
+      await axios.post("http://127.0.0.1:3000/invoices", invoiceData);
       setInvoiceNumber(newInvoiceNumber);
       localStorage.setItem("invoiceNumber", newInvoiceNumber);
       onSave(invoiceData);
@@ -69,7 +69,7 @@ const InvoiceForm = ({ onSave }) => {
 
   const fetchAndUpdateInvoice = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:3000/api/invoices");
+      const response = await axios.get("http://127.0.0.1:3000/invoices");
       const latestNumber = response.data.invoiceNumber || "ZWD 25/0000";
       setInvoiceNumber(latestNumber);
       localStorage.setItem("invoiceNumber", latestNumber);

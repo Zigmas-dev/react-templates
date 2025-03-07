@@ -1,0 +1,152 @@
+.invoice-preview {
+  background-color: #f9f9f9;
+  font-family: var(--main-font);
+  width: 210mm;
+  min-height: 297mm;
+  padding: 20mm;
+  margin: 0 auto;
+  box-sizing: border-box;
+  page-break-after: always;
+
+  &:last-child {
+    page-break-after: auto;
+  }
+
+  h2 {
+    color: #333;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .date {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10mm;
+  }
+
+  .company-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15mm;
+
+    .seller-details,
+    .client-details {
+      width: 48%;
+    }
+
+    h3 {
+      font-size: 1.2em;
+      margin-bottom: 5mm;
+    }
+  }
+
+  h3 {
+    color: #555;
+    margin-top: 10mm;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3mm;
+  }
+
+  p {
+    margin-bottom: 5mm;
+    color: #666;
+    font-size: 1em;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10mm;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    th, td {
+      border: 1px solid #eee;
+      padding: 8px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      font-weight: 600;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+  }
+
+  .total-section {
+    margin-top: 15mm;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  .payment-terms,
+  .additional-info {
+    margin-top: 10mm;
+    text-align: left;
+    color: #777;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .additional-info {
+    border-top: 1px solid #eee;
+    padding-top: 5mm;
+  }
+
+  .signatures {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15mm;
+
+    .signature-section {
+      width: 45%;
+
+      h3 {
+        font-size: 1.1em;
+        margin-bottom: 5mm;
+      }
+
+      .signature-line {
+        margin-bottom: 3mm;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .page-counter {
+    text-align: right;
+    margin-top: 5mm;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #777;
+  }
+}
+
+@media print {
+  .invoice-preview {
+    page-break-after: always;
+
+    &:last-child {
+      page-break-after: auto;
+    }
+  }
+}
