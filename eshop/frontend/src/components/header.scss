@@ -1,0 +1,63 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f0f0f0; // Example background color
+  
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  
+    .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  
+    .nav {
+      display: none; // Initially hidden on mobile
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f0f0f0; // Match header background
+      padding: 1rem;
+  
+      &.open {
+        display: flex; // Show the menu when open
+      }
+  
+      a {
+        text-decoration: none;
+        color: #333; // Example text color
+        padding: 0.5rem 0;
+        text-align: center;
+      }
+    }
+  }
+  
+  // Desktop styles (using media query)
+  @media (min-width: 768px) {
+    .header {
+      .menu-toggle {
+        display: none; // Hide menu toggle on desktop
+      }
+  
+      .nav {
+        display: flex; // Show navigation on desktop
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+        background-color: transparent;
+  
+        a {
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
