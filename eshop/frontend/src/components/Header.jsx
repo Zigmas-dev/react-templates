@@ -16,8 +16,6 @@ const Header = () => {
        {isMenuOpen ? <FaTimes /> : <FaBars />}
       </button>
       <nav className={`nav &{isMenuOpen ? 'open' : ''}`}>
-       <a href="#home">Pagrindinis</a>
-       <a href="#about">Apie mus</a>
        <a href="#e-shop">E-Parduotuvė</a>
       </nav>
      </header>
