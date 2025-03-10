@@ -1,4 +1,34 @@
-.about-container {
-  margin: 0;
+.home-container {
+  width: 100%;
+
+  .section-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column; // Mobiliems įrenginiams: vienas po kito
+
+    .about-container,
+    .gallery-container {
+      width: 100%; // Užima visą plotį mobiliuos
+    }
+  }
+
+  @media (min-width: 768px) {
+    .home-container {
+      max-width: 1200;
+    }
  
+    .section-wrapper {
+      display: flex;
+      flex-direction: row; // Desktop: vienas šalia kito
+      
+    }
+
+   
+
+    .about-container,
+    .gallery-container {
+      margin: 0;
+      width: 800px;
+    }
+  }
 }

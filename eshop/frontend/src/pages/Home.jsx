@@ -9,12 +9,14 @@ const Home = () => {
       <section className="hero-section">
        <Hero />
       </section>
-      <section className="about-container">
-        <About />
-      </section>
-      <section className="gallery-container">
-        <Gallery />
-      </section>
+      <div className="section-wrapper">
+        <section className="about-container">
+          <About />
+        </section>
+        <section className="gallery-container">
+          <Gallery />
+        </section>
+      </div>
       Čia bus aprašymas apiemus
     </div>
   );

@@ -1,0 +1,82 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .carousel-track-container {
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; // Vaizdai telpa konteineryje be karpymo
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1;
+
+    &.prev {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      margin: 0 5px;
+      cursor: pointer;
+
+      &.active {
+        background: white;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    // Desktop stiliai
+    button {
+      padding: 15px;
+      font-size: 25px;
+    }
+
+    .dots {
+      bottom: 20px;
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        margin: 0 8px;
+      }
+    }
+  }
+}

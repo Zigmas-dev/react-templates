@@ -1,0 +1,10 @@
+.gallery-container {
+    width: 100%;
+    }
+  
+    // Desktop stiliai
+    @media (min-width: 768px) {
+     .gallery-container {
+       width: 400px;
+     }
+  }

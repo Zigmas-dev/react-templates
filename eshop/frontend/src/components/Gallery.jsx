@@ -1,10 +1,12 @@
-import Carousele from "./Carousele";
+import Carousel from "./Carousel";
 import "./gallery.scss";
 
 const Gallery = () => {
   return (
-    <div className="carousele">
-      <Carousele />
+    <div className="gallery">
+      <div className="carousel">
+        <Carousel />
+    </div>
     </div>
   );
 };
