@@ -1,0 +1,77 @@
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    text-align: center;
+    margin: 0;
+    padding: 5px 5px;
+    height: 100%; // Pridedame, kad užimtų visą aukštį
+  
+    h2 {
+      font-family: var(--main-font);
+      font-size: 1.2rem;
+      margin: 0;
+      margin-bottom: 5px;
+    }
+  
+    .contact-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+  
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1px;
+        text-align: left;
+  
+        .icon {
+          margin-right: 15px;
+          color: #007bff;
+          font-size: 1.2em;
+        }
+  
+        p {
+          font-family: var(--main-font);
+          font-size: 1rem;
+          margin: 0;
+          line-height: 1.5;
+        }
+      }
+    }
+  
+    @media (min-width: 768px) {
+      text-align: left;
+      .contact-info {
+        align-items: flex-start;
+        margin: 0;
+      }
+    }
+  
+    @media (min-width: 1280px) {
+      h2 {
+        font-size: 1.4rem;
+      }
+      .contact-item {
+        margin-bottom: 5px;
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  
+    @media (min-width: 1920px) {
+      h2 {
+        font-size: 2rem;
+        font-family: var(--main-font);
+      }
+      .contact-item {
+        margin-bottom: 10px;
+        p {
+          font-size: 1.8rem;
+          font-family: var(--main-font);
+        }
+      }
+    }
+  }

@@ -1,5 +1,4 @@
 .hero {
-  //background-image: url('https://via.placeholder.com/600x300'); /* Mažesnė nuotrauka mobiliesiems */
   background-size: cover;
   background-position: center;
   background-color: blue;
@@ -11,33 +10,62 @@
   margin: 0;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  
+
   .hero-content {
     h1 {
+      font-family: var(--main-font);
       font-size: 1.8em;
       margin: 0;
     }
-  
+
     p {
+      font-family: var(--main-font);
       font-size: 1em;
       margin: 0;
       margin-top: 10px;
-    } 
+    }
   }
 
   @media (min-width: 768px) {
-    //background-image: url('https://via.placeholder.com/1200x500'); /* Didesnė nuotrauka desktopams */
     padding: 50px;
-  
+
     .hero-content {
       h1 {
         font-size: 3em;
         margin-bottom: 20px;
       }
-  
+
       p {
         font-size: 1.2em;
         margin-bottom: 30px;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding: 80px;
+
+    .hero-content {
+      h1 {
+        font-size: 3.5em;
+      }
+
+      p {
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    padding: 10px;
+
+    .hero-content {
+      h1 {
+        font-size: 4em;
+      }
+
+      p {
+        font-size: 1.6em;
       }
     }
   }

@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Gallery from "../components/Gallery";
+import Contacts from "../components/Contacts";
 import "./home.scss";
 
 const Home = () => {
@@ -16,8 +17,10 @@ const Home = () => {
         <section className="gallery-container">
           <Gallery />
         </section>
+        <section className="contact-container">
+          <Contacts />
+        </section>
       </div>
-      Čia bus aprašymas apiemus
     </div>
   );
 };
