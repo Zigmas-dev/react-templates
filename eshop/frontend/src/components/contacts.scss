@@ -4,14 +4,14 @@
     background-color: #f8f8f8;
     text-align: center;
     margin: 0;
-    padding: 5px 5px;
+    padding: 5px 15px;
     height: 100%; // Pridedame, kad užimtų visą aukštį
   
     h2 {
       font-family: var(--main-font);
       font-size: 1.2rem;
+      padding: 6px 0;
       margin: 0;
-      margin-bottom: 5px;
     }
   
     .contact-info {
@@ -19,6 +19,7 @@
       display: flex;
       flex-direction: column;
       margin: 0 auto;
+      padding: 6px 0;
   
       .contact-item {
         display: flex;
@@ -46,6 +47,18 @@
       .contact-info {
         align-items: flex-start;
         margin: 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h2 {
+        font-size: 1.3rem; /* Tarp 768px ir 1280px */
+      }
+      .contact-item {
+        margin-bottom: 3px; /* Tarp 768px ir 1280px */
+        p {
+          font-size: 1.05rem; /* Tarp 768px ir 1280px */
+        }
       }
     }
   

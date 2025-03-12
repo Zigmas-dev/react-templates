@@ -14,8 +14,9 @@
   .hero-content {
     h1 {
       font-family: var(--main-font);
-      font-size: 1.8em;
+      font-size: 1.6rem;
       margin: 0;
+      padding: 0 5px;
     }
 
     p {
@@ -27,31 +28,48 @@
   }
 
   @media (min-width: 768px) {
-    padding: 50px;
+    padding: 15px;
 
     .hero-content {
       h1 {
         font-size: 3em;
-        margin-bottom: 20px;
+        margin: 0;
       }
 
       p {
         font-size: 1.2em;
-        margin-bottom: 30px;
+        margin-top: 10px
+        
       }
     }
   }
 
+  @media (min-width: 1024px) {
+    padding: 35px; /* Tarp 768px ir 1280px */
+    .hero-content {
+      h1 {
+        font-size: 3.5em; /* Tarp 768px ir 1280px */
+      }
+      p {
+        font-size: 1.3em; /* Tarp 768px ir 1280px */
+      }
+    }
+  }
+
+
   @media (min-width: 1280px) {
-    padding: 80px;
+    padding: 20px;
 
     .hero-content {
       h1 {
-        font-size: 3.5em;
+        font-size: 3rem;
+        margin: 0;
+        margin-bottom: 5px;
       }
 
       p {
-        font-size: 1.4em;
+        font-size: 1.4rem;
+        margin: 0;
       }
     }
   }

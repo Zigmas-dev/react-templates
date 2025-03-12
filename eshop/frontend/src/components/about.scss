@@ -2,7 +2,7 @@
   background-color: lightgreen;
   padding: 10px 20px;
   text-align: center;
-  height: 100%; // Pridedame, kad užimtų visą aukštį
+  height: 100%;
 
   .about-content {
     h2 {
@@ -25,16 +25,30 @@
   }
 
   @media (min-width: 768px) {
-    padding: 30px;
     .about-content {
+      padding: 1rem 2rem;
       h2 {
-        font-size: 2.2em;
+        font-size: 2.5rem;
         margin-bottom: 15px;
       }
       p {
-        font-size: 1.05em;
+        font-size: 1.3rem;
         line-height: 1.6;
-        text-align: left;
+        text-align: justify;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 35px; /* Tarp 768px ir 1280px */
+    .about-content {
+      h2 {
+        font-size: 2.25em; /* Tarp 2.2em ir 2.3em */
+        margin-bottom: 16px; /* Tarp 15px ir 18px */
+      }
+      p {
+        font-size: 1.06em; /* Tarp 1.05em ir 1.08em */
+        line-height: 1.65; /* Tarp 1.6 ir 1.7 */
       }
     }
   }

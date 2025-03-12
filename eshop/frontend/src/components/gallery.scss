@@ -9,6 +9,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .gallery-container {
+    width: 450px; /* Tarp 768px ir 1280px */
+  }
+}
+
 @media (min-width: 1280px) {
   .gallery-container {
     width: 500px;

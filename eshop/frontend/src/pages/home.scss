@@ -2,6 +2,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 30px;
 
   .section-wrapper {
     width: 100%;
@@ -10,21 +12,90 @@
     flex-grow: 1;
   }
 
-  @media (min-width: 1280px) {
-    .home-container {
-      max-width: 1200px;
-      margin: 0 auto;
+  @media (min-width: 768px) {
+    padding-bottom: 60px;
+
+    .section-wrapper {
+      display: flex;
+      flex-direction: column;
     }
+
+    .about-container {
+      order: 1;
+    }
+
+    .gallery-container,
+    .contact-container {
+      width: 100%; // Užima visą plotį
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-container {
+      order: 2;
+    }
+
+    .contact-container {
+      order: 3;
+    }
+
+    .section-wrapper {
+      flex-direction: column;
+    }
+
+    .gallery-container,
+    .contact-container {
+      width: 100%; // Užima visą plotį
+    }
+
+    .gallery-container,
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-container,
+    .contact-container {
+      height: auto;
+    }
+
+    .section-wrapper {
+      display: flex;
+      flex-direction: column; // Galerija ir kontaktai po about
+    }
+
+    .gallery-container,
+    .contact-container {
+      box-sizing: border-box;
+    }
+
+    // Papildomi pakeitimai, kad užimtų pilną aukštį
+    .section-wrapper {
+      flex-grow: 1; // Užima likusią vietą
+    }
+
+    .gallery-container,
+    .contact-container {
+      flex-grow: 1; // Užima likusią vietą
+    }
+  }
+
+
+  @media (min-width: 1024px) {
+    max-width: 1200px;
+    margin: 0;
+    padding-bottom: 60px;
 
     .section-wrapper {
       display: flex;
       flex-direction: row;
       width: 100%;
-      height: 700px; // Pridedame, kad section-wrapper užimtų visą aukštį
+      height: 600px;
     }
 
     .gallery-container {
-      width: 45%; // Gallery užima 45%
+      width: 45%;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -33,7 +104,38 @@
 
     .about-container,
     .contact-container {
-      width: 27.5%; // Likusi dalis padalinta per pusę (55% / 2 = 27.5%)
+      width: 27.5%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 60px;
+
+    .section-wrapper {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 800px;
+    }
+
+    .gallery-container {
+      width: 45%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 800px;
+    }
+
+    .about-container,
+    .contact-container {
+      width: 27.5%;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -42,20 +144,20 @@
   }
 
   @media (min-width: 1920px) {
-    .home-container {
-      max-width: 1800px;
-      margin: 0 auto;
-    }
+    max-width: 1800px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 60px;
 
     .section-wrapper {
       display: flex;
       flex-direction: row;
       width: 100%;
-      height: 700px; // Pridedame, kad section-wrapper užimtų visą aukštį
+      height: 700px;
     }
 
     .gallery-container {
-      width: 45%; // Gallery užima 45%
+      width: 45%;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -64,11 +166,11 @@
 
     .about-container,
     .contact-container {
-      width: 27.5%; // Likusi dalis padalinta per pusę (55% / 2 = 27.5%)
+      width: 27.5%;
       margin: 0;
       display: flex;
       flex-direction: column;
       height: 100%;
     }
   }
-  }
+}
