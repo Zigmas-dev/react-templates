@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: #f0f0f0;
   position: fixed; /* Pridėta ši eilutė */
   top: 0; /* Pridėta ši eilutė */
@@ -22,7 +22,6 @@
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 0;
   }
 
   .nav {
@@ -33,7 +32,6 @@
     top: 100%;
     left: 0;
     background-color: #f0f0f0;
-    padding: 1rem;
 
     &.open {
       display: flex;
@@ -75,7 +73,7 @@
 
 @media (min-width: 1280px) {
   .header {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 
     .logo {
       font-size: 2rem;
