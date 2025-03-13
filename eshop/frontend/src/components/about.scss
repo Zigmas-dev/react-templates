@@ -39,20 +39,6 @@
     }
   }
 
-  @media (min-width: 1024px) {
-    padding: 35px; /* Tarp 768px ir 1280px */
-    .about-content {
-      h2 {
-        font-size: 2.25em; /* Tarp 2.2em ir 2.3em */
-        margin-bottom: 16px; /* Tarp 15px ir 18px */
-      }
-      p {
-        font-size: 1.06em; /* Tarp 1.05em ir 1.08em */
-        line-height: 1.65; /* Tarp 1.6 ir 1.7 */
-      }
-    }
-  }
-
   @media (min-width: 1280px) {
     padding: 40px;
     .about-content {

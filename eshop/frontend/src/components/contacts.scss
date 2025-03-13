@@ -49,18 +49,6 @@
         margin: 0;
       }
     }
-
-    @media (min-width: 1024px) {
-      h2 {
-        font-size: 1.3rem; /* Tarp 768px ir 1280px */
-      }
-      .contact-item {
-        margin-bottom: 3px; /* Tarp 768px ir 1280px */
-        p {
-          font-size: 1.05rem; /* Tarp 768px ir 1280px */
-        }
-      }
-    }
   
     @media (min-width: 1280px) {
       h2 {

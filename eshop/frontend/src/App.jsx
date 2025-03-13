@@ -17,7 +17,7 @@ const App = () => {
       </Routes>
       <Footer />
 
-      Sveiki atvykę į Mano El. Svetainę!
+      
     </div>
   );
 };
