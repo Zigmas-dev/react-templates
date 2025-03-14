@@ -1,7 +1,8 @@
 import { FaBuilding, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import PropTypes from 'prop-types'; // Importuojame prop-types
 import "./contacts.scss";
 
-const Contacts = () => {
+const Contacts = ({ onButtonClick }) => { // Priimame funkciją kaip savybę
   return (
     <div className="contacts-container">
       <h2>Mūsų Kontaktai</h2>
@@ -23,8 +24,15 @@ const Contacts = () => {
           <p>El. paštas: info@loremipsum.com</p>
         </div>
       </div>
+      <button className="contact-button" onClick={onButtonClick}> {/* Iškviesti funkciją */}
+        Pateikti užklausą
+      </button>
     </div>
   );
+};
+
+Contacts.propTypes = {
+  onButtonClick: PropTypes.func.isRequired, // Apibrėžiame savybę
 };
 
 export default Contacts;
