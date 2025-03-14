@@ -110,6 +110,7 @@
     }
     .slide img {
       height: 645px;
+      object-fit: cover; /* Pridedame object-fit: cover; */
     }
   }
 }
