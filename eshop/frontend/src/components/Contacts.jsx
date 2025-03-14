@@ -5,7 +5,6 @@ import "./contacts.scss";
 const Contacts = ({ onButtonClick }) => { // Priimame funkciją kaip savybę
   return (
     <div className="contacts-container">
-      <h2>Mūsų Kontaktai</h2>
       <div className="contact-info">
         <div className="contact-item">
           <FaBuilding className="icon" />
@@ -13,7 +12,7 @@ const Contacts = ({ onButtonClick }) => { // Priimame funkciją kaip savybę
         </div>
         <div className="contact-item">
           <FaMapMarkerAlt className="icon" />
-          <p>Adresas: Lorem g. 123, Lorem miestas, LT-12345</p>
+          <p>Adresas: Lorem g. 123, Lorem, LT-12345</p>
         </div>
         <div className="contact-item">
           <FaPhone className="icon" />
