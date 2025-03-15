@@ -10,7 +10,7 @@
   z-index: 100;
 
   .logo,
-  .menu-toggle {
+  .menuToggle {
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
@@ -22,100 +22,82 @@
     font-weight: bold;
   }
 
-  .menu-toggle {
+  .menuToggle {
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .nav-container {
-    display: none;
-    align-items: center;
-    padding: 0;
-
-    &.open {
-      display: flex;
-      width: auto;
-    }
+  .navContainer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 1rem; // Atitraukiam nuo dešinio krašto
+    width: 200px; // Nustatom plotį
+    background-color: yellow;
+    z-index: 99;
+    border: 1px solid #ccc; // Pridedam borderį
+    border-top: none; // Pašalinam viršutinį borderį
 
     .nav {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-end; // Išdėstom elementus dešinėje
+      width: 100%;
 
-      a {
+      .link {
         font-family: var(--main-font);
         text-decoration: none;
         color: #333;
         font-size: 1.1rem;
-        padding: 0;
-        margin-left: 5rem;
+        padding: 1rem; // Pridedam padding
+        width: 100%;
+        text-align: right;
       }
     }
   }
 
   @media (min-width: 768px) {
-    .header {
-      padding: 1rem;
-    }
+    padding: 1rem;
 
-    .nav-container {
+    .navContainer {
       position: static;
       display: flex;
+      flex-direction: row;
       width: auto;
       box-shadow: none;
+      border: none; // Pašalinam borderį didesniuose ekranuose
 
       .nav {
         flex-direction: row;
+        align-items: center; // Centruojam elementus vertikaliai
 
-        a {
+        .link {
           font-size: 1.4rem;
-          padding: 1rem 1rem; /* Pridedam padding, atstatom nuorodos aukštį */
+          padding: 1rem 1rem;
         }
       }
     }
 
-    .menu-toggle {
+    .menuToggle {
       display: none;
     }
   }
 
   @media (min-width: 1280px) {
-    .header {
-      padding: 1.5rem;
-    }
-
-    .logo,
-    .menu-toggle {
-      padding: 0.75rem 1.5rem;
-    }
-
-    .logo {
-      font-size: 2rem;
-    }
-
-    .nav-container .nav a {
-      font-size: 2rem;
-    }
+    padding: 1.5rem;
   }
 
   @media (min-width: 1920px) {
-    .header {
-      padding: 2rem;
-    }
+    padding: 2rem;
 
-    .logo,
-    .menu-toggle {
-      padding: 1rem 2rem;
-    }
-
-    .logo {
-      font-size: 2.5rem;
-    }
-
-    .nav-container .nav a {
-      font-size: 2.5rem;
+    .navContainer .nav .link {
       margin-left: 2rem;
     }
   }
