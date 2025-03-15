@@ -2,20 +2,20 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Eshop from "./e-pages/Eshop";
+import MainPage from "./e-pages/MainPage"; // Teisingas importas
 import "./index.scss";
 
 const App = () => {
   const location = useLocation();
-  const isEshopPage = location.pathname === "/eshop";
+  const isMainPage = location.pathname === "/main-page"; // Pataisytas kelias
 
   return (
     <div>
-      {!isEshopPage && <Header />} {/* Rodome Header tik tada, kai ne eshop puslapis */}
+      {!isMainPage && <Header />}
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/eshop" element={<Eshop />} />
+        <Route path="/main-page" element={<MainPage />} />
       </Routes>
 
       <Footer />
