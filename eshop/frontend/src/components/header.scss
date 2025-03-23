@@ -13,7 +13,7 @@
   .menu-toggle {
     display: flex;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
   }
 
   .logo {
@@ -25,7 +25,7 @@
   .menu-toggle {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     z-index: 101;
   }
@@ -48,9 +48,10 @@
         font-family: var(--main-font);
         text-decoration: none;
         color: #333;
-        font-size: 1.1rem;
+        font-size: 1rem;
+        font-weight: bold;
         padding: 0;
-        margin-left: 5rem;
+        margin-left: 8rem;
       }
     }
   }
@@ -83,20 +84,20 @@
 
   @media (min-width: 1280px) {
     .header {
-      padding: 1.5rem;
+      padding: 1rem;
     }
 
     .logo,
     .menu-toggle {
-      padding: 0.75rem 1.5rem;
+      padding: 0.5rem;
     }
 
     .logo {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     .nav-container .nav a {
-      font-size: 2rem;
+      font-size: 1rem;
     }
   }
 

@@ -1,0 +1,101 @@
+/* Searchbar.module.scss */
+
+.searchbarContainer {
+  width: 100%;
+  padding: 10px;
+  /* Add padding to both sides for mobile */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.searchbar {
+  display: flex;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media queries */
+
+@media (min-width: 768px) {
+  .searchbarContainer {
+    padding: 15px;
+    /* Remove redundant left/right padding */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .input {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  .button {
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .searchbarContainer {
+    padding: 20px;
+    /* Remove redundant left/right padding */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .searchbar {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .input {
+    font-size: 20px;
+    padding: 12px 20px;
+  }
+
+  .button {
+    padding: 12px 25px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .searchbarContainer {
+    padding: 25px;
+    /* Remove redundant left/right padding */
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .searchbar {
+    max-width: 800px;
+  }
+
+  .input {
+    font-size: 22px;
+    padding: 15px 25px;
+  }
+
+  .button {
+    padding: 15px 30px;
+  }
+}
