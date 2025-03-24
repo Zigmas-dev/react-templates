@@ -21,7 +21,7 @@ const Footer = () => {
           <FaFacebook color="#1877F2" />
         </div>
       </div>   
-      <p>&copy; 2024 zigmaswebdev.lt. Visos teisės ginamos.</p>
+      <p>&copy; {new Date().getFullYear()} zigmaswebdev.lt. Visos teisės ginamos.</p>
     </div>
   );
 };
