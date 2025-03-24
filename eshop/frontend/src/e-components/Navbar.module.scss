@@ -1,18 +1,26 @@
 .navbar {
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%; // Užtikrina vienodus atstumus mobile
+  padding: 0 0.5rem;
   background-color: yellow;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  box-sizing: border-box; // Užtikrina, kad padding neperžengtų width ribų
+  box-sizing: border-box;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
   }
 
@@ -36,14 +44,22 @@
   }
 
   .menu-toggle {
+    display: flex;
+    justify-content: center;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
+    padding: 0;
   }
 
   @media (min-width: 768px) {
-    padding: 1rem 2rem; // Vidutiniuose ekranuose didesni atstumai nuo kraštų
+    display: flex; 
+    padding: 1rem; 
+    .content-wrapper {
+      padding: 0; 
+      width: auto; 
+    }
     .nav-links {
       display: flex;
       flex-direction: row;
@@ -58,14 +74,14 @@
   }
 
   @media (min-width: 1280px) {
-    padding: 1rem 3rem; // Dar didesni atstumai
+    padding: 1rem 3rem; // padidinamas pagrindinio navbar padding
   }
 
   @media (min-width: 1440px) {
-    padding: 1rem 4rem;
+    padding: 1rem 4rem; // padidinamas pagrindinio navbar padding
   }
 
   @media (min-width: 1920px) {
-    padding: 1rem 5rem;
+    padding: 1rem 5rem; // padidinamas pagrindinio navbar padding
   }
 }

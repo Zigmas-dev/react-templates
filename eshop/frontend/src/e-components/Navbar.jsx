@@ -12,7 +12,12 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>E-SHOP</div>
+      <div className={styles['content-wrapper']}> {/* Pridėtas content-wrapper */}
+        <div className={styles.logo}>E-SHOP</div>
+        <button className={styles['menu-toggle']} onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
       <div className={`${styles['nav-links']} ${isMenuOpen ? styles.open : ''}`}>
         <Link to="/" className={styles.link}>Atgal į svetainę</Link>
         <Link to="/products" className={styles.link}>Produktai</Link>
@@ -20,9 +25,6 @@ const Navbar = () => {
         <Link to="/cart" className={styles.link}>Krepšelis</Link>
         <Link to="/contact" className={styles.link}>Kontaktai</Link>
       </div>
-      <button className={styles['menu-toggle']} onClick={toggleMenu}>
-        {isMenuOpen ? <FaTimes /> : <FaBars />}
-      </button>
     </nav>
   );
 };
