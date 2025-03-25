@@ -3,29 +3,29 @@
 }
 
 body {
-  margin: 0;
+  max-width: 1200px; /* Pradinis maksimalus plotis */
   background-color: grey;
-  max-width: 1200px; // Nustatom maksimalų plotį mobiliesiems ir vidutiniams ekranams
-  margin: 0 auto; // Centruojam turinį horizontaliai
+  margin: 0 auto;
   padding: 0;
 }
 
 @media (min-width: 768px) {
   body {
-    padding: 0;
+    max-width: 1600px;
+    padding: 0 ; 
   }
 }
 
 @media (min-width: 1280px) {
   body {
-    padding: 0;
-    max-width: 1600px;
+    max-width: 2300px;
+    padding: 0; 
   }
 }
 
 @media (min-width: 1920px) {
   body {
-    max-width: 2300px; // Padidinam maksimalų plotį dideliems ekranams
+    max-width: 2800px;
     padding: 0;
   }
 }
