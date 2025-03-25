@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 import "./header.scss";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Gauti dabartinį maršrutą
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,7 +16,11 @@ const Header = () => {
       <div className="logo">E-SHOP</div>
       <div className={`nav-container ${isMenuOpen ? 'open' : ''}`}>
         <nav className="nav">
-          <Link to="/main-page" className="link">E-Parduotuvė</Link>
+          {location.pathname === "/shop" ? (
+            <Link to="/" className="link">Grįžti į svetainę</Link>
+          ) : (
+            <Link to="/shop" className="link">E-Parduotuvė</Link>
+          )}
         </nav>
       </div>
       <button className="menu-toggle" onClick={toggleMenu}>
