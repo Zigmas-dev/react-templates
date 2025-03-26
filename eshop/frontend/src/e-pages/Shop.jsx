@@ -1,20 +1,26 @@
-import { useLocation } from "react-router-dom"; // Importuojame useLocation
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "../e-componets/Navbar";
 import CategoryLink from "../e-componets/CategoryLink";
+import Cart from "../e-componets/Cart";
+import Electronics from "./Electronics";
+import { CartProvider } from "../e-componets/CartContext";
 import "./shop.scss";
 
 const Shop = () => {
-  const location = useLocation(); // Gauname dabartinę nuorodą
-
-  // Patikriname, ar esame e-parduotuvės puslapyje
-  const isShopPage = location.pathname === "/shop";
+  const location = useLocation(); // Gauname dabartinį maršrutą
 
   return (
-    <div>
-      {isShopPage && <Navbar />} {/* Jei esame e-parduotuvės puslapyje, rodyti Navbar */}
-      <CategoryLink />
-      <div className="hello">Sveiki. Čia pagrindinis e-paeduotuvės puslapis</div>
-    </div>
+    <CartProvider>
+      <Navbar /> {/* Jei esame e-parduotuvės puslapyje, rodyti Navbar */}
+      
+      {/* Rodyti CategoryLink tik jei esame pagrindiniame /shop puslapyje */}
+      {location.pathname === "/shop" && <CategoryLink />}
+      
+      <Routes>
+        <Route path="/category/electronics" element={<Electronics />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </CartProvider>
   );
 };
 

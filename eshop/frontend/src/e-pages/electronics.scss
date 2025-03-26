@@ -1,0 +1,44 @@
+.electronics-container {
+    padding: 16px;
+    text-align: center;
+  
+    h2 {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 16px;
+    }
+  }
+  
+  /* Planšetė (nuo 768px) */
+  @media (min-width: 768px) {
+    .electronics-container {
+      padding: 24px;
+  
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
+  
+  /* Laptopas (nuo 1280px) */
+  @media (min-width: 1280px) {
+    .electronics-container {
+      padding: 32px;
+  
+      h2 {
+        font-size: 26px;
+      }
+    }
+  }
+  
+  /* Didelis ekranas (nuo 1920px) */
+  @media (min-width: 1920px) {
+    .electronics-container {
+      padding: 40px;
+  
+      h2 {
+        font-size: 28px;
+      }
+    }
+  }
+  

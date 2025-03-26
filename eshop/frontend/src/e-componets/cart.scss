@@ -1,0 +1,75 @@
+.cart-container {
+    padding: 20px;
+    font-family: sans-serif;
+  
+    h1 {
+      margin-bottom: 20px;
+    }
+  
+    .cart-items {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+  
+      .item-details {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .item-quantity {
+        align-self: center;
+      }
+    }
+  
+    .total-price {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    .checkout-button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+  
+  // Media užklausos
+  @media (min-width: 768px) {
+    .cart-container {
+      padding: 30px;
+    }
+  
+    .cart-item {
+      padding: 15px;
+    }
+  
+    .checkout-button {
+      width: auto;
+      align-self: flex-end;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .cart-container {
+      padding: 40px;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    .cart-container {
+      width: 70%;
+    }
+  }

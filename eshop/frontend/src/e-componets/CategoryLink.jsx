@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import "./categorylink.scss";
 
 const CategoryLink = () => {
@@ -6,22 +6,22 @@ const CategoryLink = () => {
     {
       category: "Elektronika",
       imageUrl: "https://picsum.photos/300/200?category=electronics",
-      link: "/katalogas/elektronika",
+      link: "/shop/category/electronics", // ✅ Pakeista nuoroda
     },
     {
       category: "Drabužiai",
       imageUrl: "https://picsum.photos/300/200?category=clothing",
-      link: "/katalogas/drabužiai",
+      link: "/shop/category/clothing", // ✅ Pakeista nuoroda
     },
     {
       category: "Namams",
       imageUrl: "https://picsum.photos/300/200?category=home",
-      link: "/katalogas/namams",
+      link: "/shop/category/home", // ✅ Pakeista nuoroda
     },
     {
       category: "Žaislai",
       imageUrl: "https://picsum.photos/300/200?category=toys",
-      link: "/katalogas/žaislai",
+      link: "/shop/category/toys", // ✅ Pakeista nuoroda
     },
   ];
 
@@ -36,9 +36,9 @@ const CategoryLink = () => {
           />
           <div className="category-link__overlay">
             <h3 className="category-link__title">{item.category}</h3>
-            <a href={item.link} className="category-link__button">
+            <Link to={item.link} className="category-link__button">
               Peržiūrėti
-            </a>
+            </Link>
           </div>
         </div>
       ))}
