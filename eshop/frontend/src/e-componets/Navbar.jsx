@@ -1,10 +1,14 @@
+import { useContext } from "react";
+import PropTypes from "prop-types";
 import { Formik, Form, Field } from "formik";
 import DOMPurify from "dompurify";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket, FaUser, FaSearch, FaQuestionCircle } from "react-icons/fa";
+import { CartContext } from "./CartContext";
 import "./navbar.scss";
 
 const Navbar = () => {
+  const { cartItems } = useContext(CartContext); 
   // Paieškos užklausos apdorojimas su DOMPurify, kad būtų užtikrintas saugumas
   const handleSearchSubmit = (values, { resetForm }) => {
     const sanitizedQuery = DOMPurify.sanitize(values.searchQuery); // Sanitizuojame paieškos užklausą
@@ -40,6 +44,7 @@ const Navbar = () => {
       <div className="icons">
         <Link to="/shop/cart" className="cart-icon">
           <FaShoppingBasket />
+          {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
         </Link>
         <Link to="/shop/account" className="user-icon">
           <FaUser />
@@ -50,6 +55,10 @@ const Navbar = () => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  cartItems: PropTypes.arrayOf(PropTypes.object).isRequired, //Nurodome, kad cartItems yra mastvas ir yra privalomas
 };
 
 export default Navbar;
