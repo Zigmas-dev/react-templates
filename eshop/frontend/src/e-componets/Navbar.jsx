@@ -16,10 +16,6 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Prekių kategorijos */}
       <ul className="categories">
-        <li><Link to="/shop/category/electronics">Elektronika</Link></li>
-        <li><Link to="/shop/category/clothing">Drabužiai</Link></li>
-        <li><Link to="/shop/category/home">Namams</Link></li>
-        <li><Link to="/shop/category/toys">Žaislai</Link></li>
         <li><Link to="/shop/faq">DUK</Link></li>
       </ul>
 
