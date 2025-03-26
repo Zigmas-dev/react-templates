@@ -1,100 +1,101 @@
 .product-preview-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    padding: 20px; // Pridedame padding mobiliems įrenginiams
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  //padding: 20px; // Pridedame padding mobiliems įrenginiams
+}
+  
+.product-preview-modal {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+  width: 85%; // Padarome, kad modalas užimtų visą plotį mobiliuose įrenginiuose
+  max-width: 600px;
+}
+  
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-size: bold;
+  cursor: pointer;
+}
+  
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+  
+.product-preview-modal h2 {
+  margin-bottom: 10px;
+}
+  
+.product-preview-modal .price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+  
+.product-preview-modal .description {
+  margin-bottom: 20px;
+}
+  
+.product-preview-modal ul {
+  list-style: none;
+  padding: 0;
+}
+  
+.product-preview-modal li {
+  margin-bottom: 5px;
+}
+  
+.buy-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  
+  svg {
+    margin-right: 5px;
   }
   
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+  
+@media (min-width: 768px) {
   .product-preview-modal {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    width: 100%; // Padarome, kad modalas užimtų visą plotį mobiliuose įrenginiuose
-    max-width: 600px;
+    width: 80%; // Padarome, kad modalas užimtų 80% pločio didesniuose ekranuose
   }
+}
   
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
+@media (min-width: 1280px) {
+  .product-preview-modal {
+    max-width: 800px;
   }
+}
   
-  .preview-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+@media (min-width: 1920px) {
+  .product-preview-modal {
+    max-width: 1000px;
   }
-  
-  .product-preview-modal h2 {
-    margin-bottom: 10px;
-  }
-  
-  .product-preview-modal .price {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .product-preview-modal .description {
-    margin-bottom: 20px;
-  }
-  
-  .product-preview-modal ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .product-preview-modal li {
-    margin-bottom: 5px;
-  }
-  
-  .buy-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  
-    svg {
-      margin-right: 5px;
-    }
-  
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-  
-  // Media užklausos
-  @media (min-width: 768px) {
-    .product-preview-modal {
-      width: 80%; // Padarome, kad modalas užimtų 80% pločio didesniuose ekranuose
-    }
-  }
-  
-  @media (min-width: 1280px) {
-    .product-preview-modal {
-      max-width: 800px;
-    }
-  }
-  
-  @media (min-width: 1920px) {
-    .product-preview-modal {
-      max-width: 1000px;
-    }
-  }
+}

@@ -1,70 +1,65 @@
-/* Pradinis dizainas (Mobile-first) */
 .electronics-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 3.5rem;
+}
   
+.product-card {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 320px; /* Užtikrinama, kad kortelės būtų ne per didelės */
+  padding: 0m;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+  
+.product-card:hover {
+  transform: scale(1.05);
+}
+  
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius:  8px 8px 0 0;
+  margin-bottom: 0.5rem;
+}
+  
+h3 {
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+  
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+  
+
+@media (min-width: 768px) {
   .product-card {
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 320px; /* Užtikrinama, kad kortelės būtų ne per didelės */
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
+    width: 45%;
   }
+}
   
-  .product-card:hover {
-    transform: scale(1.05);
+
+@media (min-width: 1280px) {
+  .product-card {
+    width: 30%;
   }
+}
   
-  .product-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
+@media (min-width: 1920px) {
+  .product-card {
+    width: 25%;
   }
-  
-  h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .description {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Media query 768px (Tablet) */
-  @media (min-width: 768px) {
-    .product-card {
-      width: 45%;
-    }
-  }
-  
-  /* Media query 1280px (Laptop) */
-  @media (min-width: 1280px) {
-    .product-card {
-      width: 30%;
-    }
-  }
-  
-  /* Media query 1920px (Widescreen) */
-  @media (min-width: 1920px) {
-    .product-card {
-      width: 25%;
-    }
-  }
+}
   
