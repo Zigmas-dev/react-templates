@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { CartContext } from './CartContext';
-import PropTypes from 'prop-types';
-import { FaShoppingBasket } from 'react-icons/fa';
-import './productPreview.scss';
+import { useContext } from "react";
+import PropTypes from "prop-types";
+import { FaShoppingBasket } from "react-icons/fa";
+import { CartContext } from "./CartContext";
+import "./productPreview.scss";
 
 const ProductPreview = ({ product, onClose }) => {
   const { addToCart } = useContext(CartContext);
@@ -12,8 +12,14 @@ const ProductPreview = ({ product, onClose }) => {
   }
 
   const handleBuyClick = () => {
-    addToCart(product);
-    onClose(); // Uždaryti modalą
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: parseFloat(product.price.replace("€", "")),
+      quantity: 1,
+      totalPrice: parseFloat(product.price.replace("€", "")),
+    });
+    onClose();
   };
 
   return (
@@ -28,10 +34,10 @@ const ProductPreview = ({ product, onClose }) => {
         <p className="description">{product.description}</p>
         <h3>Specifikacijos</h3>
         <ul>
-          <li>Ekranas: {product.specifications?.screen || 'N/A'}</li>
-          <li>Procesorius: {product.specifications?.processor || 'N/A'}</li>
-          <li>Atmintis: {product.specifications?.memory || 'N/A'}</li>
-          <li>Baterija: {product.specifications?.battery || 'N/A'}</li>
+          <li>Ekranas: {product.specifications?.screen || "N/A"}</li>
+          <li>Procesorius: {product.specifications?.processor || "N/A"}</li>
+          <li>Atmintis: {product.specifications?.memory || "N/A"}</li>
+          <li>Baterija: {product.specifications?.battery || "N/A"}</li>
         </ul>
         <button className="buy-button" onClick={handleBuyClick}>
           <FaShoppingBasket /> Pirkti

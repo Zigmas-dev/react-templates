@@ -1,74 +1,126 @@
-.cart-container {
-  padding: 20px;
-  font-family: sans-serif;
-  
-  h1 {
+.cart {
+  padding: 0 10px;
+  h2 {
     margin-bottom: 20px;
   }
-  
-  .cart-items {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    min-width: 600px; // Pridedame minimalų plotį, kad būtų slinkimas
   }
-  
-  .cart-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+
+  th,
+  td {
+    padding: 5px 5px;
+    font-family: var(--main-font);
+    text-align: left;
     border-bottom: 1px solid #ddd;
-  
-    .item-details {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .item-quantity {
-      align-self: center;
-    }
+    white-space: nowrap; // Neleidžia tekstui lūžti
   }
-  
-  .total-price {
+
+  th {
+    background-color: #f2f2f2;
     font-weight: bold;
-    margin-bottom: 20px;
   }
-  
-  .checkout-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 50%;
+
+  th:not(:last-child),
+  td:not(:last-child) {
+    border-right: 1px solid #ddd;
   }
+
+  td:nth-child(1) {
+    width: 40%;
+  }
+
+  td:nth-child(2),
+  td:nth-child(3),
+  td:nth-child(4) {
+    width: 20%;
+    text-align: center;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .cart-totals {
+    text-align: right;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .buy-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  overflow-x: auto; // Pridedame horizontalų slinkimą
+  overflow-y: auto;
+  max-height: 80vh;
 }
-  
+
 @media (min-width: 768px) {
-  .cart-container {
-    padding: 30px;
-  }
-  
-  .cart-item {
-    padding: 15px;
-  }
-  
-  .checkout-button {
-    width: auto;
-    align-self: flex-end;
+  .cart {
+    padding: 0 40px;
+    table {
+      min-width: auto; // Pašaliname minimalų plotį didesniems ekranams
+      td:nth-child(1) {
+        width: 40%;
+      }
+
+      td:nth-child(2),
+      td:nth-child(3),
+      td:nth-child(4) {
+        width: 20%;
+      }
+    }
   }
 }
-  
+
 @media (min-width: 1280px) {
-  .cart-container {
-    padding: 40px;
-    width: 80%;
-    margin: 0 auto;
+  .cart {
+    padding: 0 60px;
+    padding-bottom: 4rem;
+    table {
+      td:nth-child(1) {
+        width: 60%;
+      }
+
+      td:nth-child(2),
+      td:nth-child(3),
+      td:nth-child(4) {
+        width: 13.333%;
+      }
+    }
   }
 }
-  
+
 @media (min-width: 1920px) {
-  .cart-container {
-    width: 70%;
+  .cart {
+    padding: 0 80px;
+    table {
+      td:nth-child(1) {
+        width: 40%;
+      }
+
+      td:nth-child(2),
+      td:nth-child(3),
+      td:nth-child(4) {
+        width: 20%;
+      }
+    }
   }
 }

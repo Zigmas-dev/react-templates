@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import PropTypes from "prop-types";
 import { Formik, Form, Field } from "formik";
 import DOMPurify from "dompurify";
 import { Link } from "react-router-dom";
@@ -8,25 +7,23 @@ import { CartContext } from "./CartContext";
 import "./navbar.scss";
 
 const Navbar = () => {
-  const { cartItems } = useContext(CartContext); 
-  // Paieškos užklausos apdorojimas su DOMPurify, kad būtų užtikrintas saugumas
+  const { totalItems } = useContext(CartContext); // Naudojame totalItems iš CartContext
+
   const handleSearchSubmit = (values, { resetForm }) => {
-    const sanitizedQuery = DOMPurify.sanitize(values.searchQuery); // Sanitizuojame paieškos užklausą
+    const sanitizedQuery = DOMPurify.sanitize(values.searchQuery);
     console.log("Ieškoma:", sanitizedQuery);
-    resetForm(); // Išvalome formą po pateikimo
+    resetForm();
   };
 
   return (
     <nav className="navbar">
-      {/* Prekių kategorijos */}
       <ul className="categories">
         <li><Link to="/shop/faq">DUK</Link></li>
       </ul>
 
-      {/* Paieškos forma su Formik */}
       <Formik
-        initialValues={{ searchQuery: "" }} // Inicialūs formos laukai
-        onSubmit={handleSearchSubmit} // Paieškos užklausos pateikimas
+        initialValues={{ searchQuery: "" }}
+        onSubmit={handleSearchSubmit}
       >
         {() => (
           <Form className="search-bar">
@@ -40,11 +37,10 @@ const Navbar = () => {
         )}
       </Formik>
 
-      {/* Ikonos: krepšelis, vartotojas, DUK */}
       <div className="icons">
         <Link to="/shop/cart" className="cart-icon">
           <FaShoppingBasket />
-          {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
+          {totalItems > 0 && <span className="cart-count">{totalItems}</span>} {/* Rodome totalItems */}
         </Link>
         <Link to="/shop/account" className="user-icon">
           <FaUser />
@@ -55,10 +51,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-Navbar.propTypes = {
-  cartItems: PropTypes.arrayOf(PropTypes.object).isRequired, //Nurodome, kad cartItems yra mastvas ir yra privalomas
 };
 
 export default Navbar;

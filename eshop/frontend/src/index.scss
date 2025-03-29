@@ -9,6 +9,11 @@ body {
   padding: 0;
 }
 
+h2, p {
+  font-family: var(--main-font);
+}
+
+
 @media (min-width: 768px) {
   body {
     max-width: 1600px;

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import './electronicsList.scss';
-import ProductPreview from './ProductPreview';
+import { useState } from "react";
+import ProductPreview from "./ProductPreview";
+import "./electronicsList.scss";
 
 const ElectronicsList = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
