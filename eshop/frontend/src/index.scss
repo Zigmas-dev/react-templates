@@ -1,5 +1,6 @@
 :root {
   --main-font: "Montserrat", sans-serif;
+  --buy-button-color: #007bff;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
   padding: 0;
 }
 
-h2, p {
+h2, h3, p, li {
   font-family: var(--main-font);
 }
 

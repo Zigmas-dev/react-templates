@@ -50,6 +50,8 @@
   
 .product-preview-modal .description {
   margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-family: var(--main-font);
 }
   
 .product-preview-modal ul {
@@ -62,7 +64,7 @@
 }
   
 .buy-button {
-  background-color: #007bff;
+  background-color: var(--buy-button-color);
   color: white;
   padding: 10px 15px;
   border: none;

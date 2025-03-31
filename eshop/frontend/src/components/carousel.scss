@@ -41,39 +41,10 @@
     }
   }
 
-  .dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      margin: 0 5px;
-      cursor: pointer;
-
-      &.active {
-        background: white;
-      }
-    }
-  }
-
   @media (min-width: 768px) {
     button {
       padding: 15px;
       font-size: 25px;
-    }
-    .dots {
-      bottom: 20px;
-      .dot {
-        width: 12px;
-        height: 12px;
-        margin: 0 8px;
-      }
     }
   }
 
@@ -82,14 +53,7 @@
       padding: 20px;
       font-size: 30px;
     }
-    .dots {
-      bottom: 30px;
-      .dot {
-        width: 14px;
-        height: 14px;
-        margin: 0 10px;
-      }
-    }
+
     .slide img {
       height: 410px;
     }
@@ -100,16 +64,9 @@
       padding: 25px;
       font-size: 35px;
     }
-    .dots {
-      bottom: 40px;
-      .dot {
-        width: 16px;
-        height: 16px;
-        margin: 0 12px;
-      }
-    }
+    
     .slide img {
-      height: 645px;
+      height: 555px;
       object-fit: cover; /* Pridedame object-fit: cover; */
     }
   }

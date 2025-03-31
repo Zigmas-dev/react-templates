@@ -1,12 +1,17 @@
-import { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
-import { calculateCartTotals } from "./cartUtils"; // Importuojame skaičiavimo funkciją
+import { calculateCartTotals } from "./cartUtils";
+import Payment from "./Payment";
 import "./cart.scss";
 
 const Cart = () => {
   const { cartItems: cart } = useContext(CartContext);
+  const { subtotal, vat, total } = calculateCartTotals(cart);
+  const [showPayment, setShowPayment] = useState(false); // Būsena, ar rodyti Payment komponentą
 
-  const { subtotal, vat, total } = calculateCartTotals(cart); // Naudojame skaičiavimo funkciją
+  const handleBuyClick = () => {
+    setShowPayment(true);
+  };
 
   return (
     <div className="cart">
@@ -39,10 +44,11 @@ const Cart = () => {
             <p>Suma be PVM: {subtotal.toFixed(2)}€</p>
             <p>PVM (21%): {vat.toFixed(2)}€</p>
             <p>Suma su PVM: {total.toFixed(2)}€</p>
-            <button className="buy-button">Pirkti</button>
+            <button className="buy-button" onClick={handleBuyClick}>Pirkti</button>
           </div>
         </>
       )}
+      {showPayment && <Payment />} {/* Atvaizduojame Payment komponentą, kai showPayment yra true */}
     </div>
   );
 };

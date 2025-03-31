@@ -1,22 +1,22 @@
-.gallery-container {
+.gallery {
   width: 100%;
   height: 100%; // Pridedame, kad užimtų visą aukštį
 }
 
 @media (min-width: 768px) {
-  .gallery-container {
-    width: 400px;
+  .gallery {
+    width: 100%;
   }
 }
 
 @media (min-width: 1280px) {
-  .gallery-container {
-    width: 500px;
+  .gallery {
+    width: 100%;
   }
 }
 
 @media (min-width: 1920px) {
-  .gallery-container {
-    width: 600px;
+  .gallery {
+    width: 100%;
   }
 }
