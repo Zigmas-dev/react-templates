@@ -1,0 +1,128 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #e8f5e9;
+  color: #2f5233;
+  font-family: 'Segoe UI', sans-serif;
+  border-bottom: 2px solid #a5d6a7;
+  
+  &-logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  
+    .logo-icon {
+      margin-right: 0.5rem;
+      color: #388e3c;
+      font-size: 1.5rem;
+    }
+  
+    span {
+      white-space: nowrap;
+    }
+  }
+  
+    &-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: #f1f8f4;
+      border-top: 1px solid #a5d6a7;
+      padding: 1rem;
+  
+      a {
+        padding: 0.5rem 0;
+        color: #2f5233;
+        text-decoration: none;
+        font-size: 1rem;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+  
+      &.open {
+        display: flex;
+      }
+    }
+  
+    &-menu {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #2f5233;
+      cursor: pointer;
+      z-index: 10;
+    }
+  }
+  
+  // Tablet nuo 768px
+  @media (min-width: 768px) {
+    .header {
+      &-nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: transparent;
+        padding: 0;
+        border: none;
+  
+        a {
+          margin-left: 1rem;
+          padding: 0;
+          font-size: 0.95rem;
+        }
+  
+        &.open {
+          display: flex;
+        }
+      }
+  
+      &-menu {
+        display: none;
+      }
+    }
+  }
+  
+  // Laptop nuo 1280px
+  @media (min-width: 1280px) {
+    .header {
+      padding: 1.5rem 3rem;
+  
+      &-logo {
+        font-size: 1.5rem;
+  
+        .logo-icon {
+          font-size: 2rem;
+        }
+      }
+  
+      &-nav a {
+        font-size: 1.1rem;
+        margin-left: 2rem;
+      }
+    }
+  }
+  
+  // Full HD nuo 1920px
+  @media (min-width: 1920px) {
+    .header {
+      padding: 2rem 5rem;
+    }
+  }
+  
+  // 2K ir daugiau nuo 2560px
+  @media (min-width: 2560px) {
+    .header {
+      max-width: 2200px;
+      margin: 0 auto;
+    }
+  }
+  
