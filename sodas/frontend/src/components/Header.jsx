@@ -14,7 +14,7 @@ const Header = ({ title }) => {
     <header className="header">
       <div className="header-logo">
        <FaLeaf className="logo-icon" />
-       <span>{title}</span>
+       <span>PAKRUOJO S/B &quot;VASARA&quot; {title}</span>
       </div>
        <nav className={`header-nav ${menuOpen ? "open" : ""}`}>
         <a href="#apie" onClick={() => setMenuOpen(false)}>Apie</a>
