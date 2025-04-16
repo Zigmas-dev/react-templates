@@ -1,0 +1,61 @@
+.bulletin {
+  padding: 1rem;
+  background: #f9fbe7;
+  color: #33691e;
+  width: 350px;
+  border-radius: 1rem;
+
+  h2 {
+    margin: 0 auto 1rem;
+    text-align: center;
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+
+    .bulletin-item {
+      background: #e6ee9c;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #558b2f;
+      border-radius: 4px;
+
+      h3 {
+        margin: 0 0 0.5rem;
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .bulletin {
+    width: 350px;
+
+    .bulletin-list {
+      width: 100%;
+    }
+  }
+}
+
+/* Laptop */
+@media (min-width: 1280px) {
+  .bulletin {
+    margin: 0 auto;
+  }
+}
+
+/* Full HD */
+@media (min-width: 1920px) {
+  .bulletin {
+    max-width: 1200px;
+  }
+}
+
+/* 2K */
+@media (min-width: 2560px) {
+  .bulletin {
+    max-width: 1400px;
+  }
+}

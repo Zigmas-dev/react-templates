@@ -3,7 +3,10 @@ import "./home.scss";
 
 const Home = () => {
   return (
-    <BulletinBoard />
+    <>
+     <BulletinBoard />
+     
+    </>
   )
 };
 

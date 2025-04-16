@@ -1,6 +1,6 @@
 import { Formik, Form, Field } from "formik";
 import PropTypes from "prop-types";
-import "./bulletin.scss";
+import "./bulletinForm.scss";
 
 const BulletinForm = ({ show, onClose, onAdd }) => {
   if (!show) return null;
