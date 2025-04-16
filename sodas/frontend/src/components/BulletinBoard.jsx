@@ -1,11 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { BulletinContext } from "./BulletinContext"; // Įsitikink, kad kelias teisingas
 import "./bulletinBoard.scss";
 
 const BulletinBoard = () => {
-  const [posts, setPosts] = useState([
-    { id: 1, title: "Vandens tiekimas", text: "Nuo balandžio 15d. vanduo vėl tiekiamas." },
-    { id: 2, title: "Talkos diena", text: "Balandžio 20d. kviečiame visus į talką 10:00." }
-  ]);
+  const { posts } = useContext(BulletinContext); // Naudojame bendrus skelbimus
 
   return (
     <div className="bulletin">

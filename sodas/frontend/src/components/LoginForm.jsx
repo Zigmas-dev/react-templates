@@ -1,9 +1,9 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import DOMPurify from 'dompurify';
+import DOMPurify from "dompurify";
 import "./forms.scss";
 
-const LoginForm = ({ onLoginSuccess, onSwitchToRegister }) => {
+const LoginForm = ({ onLoginSuccess }) => {
   const loginSchema = Yup.object().shape({
     email: Yup.string().email('Neteisingas el. pašto formatas').required('El. paštas būtinas'),
     password: Yup.string().min(6, 'Slaptažodis turi būti bent 6 simbolių').required('Slaptažodis būtinas'),
@@ -14,11 +14,11 @@ const LoginForm = ({ onLoginSuccess, onSwitchToRegister }) => {
       email: DOMPurify.sanitize(values.email),
       password: DOMPurify.sanitize(values.password),
     };
-  
-    console.log('Sanitized login values:', sanitizedValues);
+
+    console.log('Login values:', sanitizedValues);
     alert('Prisijungimas sėkmingas!');
     if (onLoginSuccess) onLoginSuccess();
-  };  
+  };
 
   return (
     <div className="form-container">
@@ -42,14 +42,8 @@ const LoginForm = ({ onLoginSuccess, onSwitchToRegister }) => {
               <ErrorMessage name="password" component="div" className="error" />
             </div>
 
-            <button type="submit" className="form-button">Prisijungti</button>
-
-            {/* Papildomas tekstas su nuoroda į registraciją */}
             <div className="form-footer">
-              <span>Neturi paskyros?</span>{" "}
-              <button type="button" onClick={onSwitchToRegister} className="link-button">
-                Registruokis čia
-              </button>
+              <button type="submit" className="form-button">Prisijungti</button>
             </div>
           </Form>
         )}
