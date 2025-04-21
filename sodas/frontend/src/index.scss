@@ -2,8 +2,83 @@
   --main-font: "Montserrat", sans-serif;
 }
 
+/* Pagrindinis nustatymas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
 body {
-  //background-color: aqua;
+  height: 100%;
+  font-family: var(--main-font);
+}
+
+body {
+  line-height: 1.5;
   background: url('./assets/sodas-background.webp') no-repeat center center fixed;
   background-size: cover;
+  color: #333;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile-first: pagrindinės nuostatos */
+body {
+  padding: 0 0.5rem; /* Kraštai 1rem visiems įrenginiams */
+}
+
+.container {
+  width: 100%;
+  max-width: 100%; /* Pilnas plotis */
+  //margin: 0 auto;
+  //padding: 0 1rem; /* Kraštai 1rem */
+}
+
+/* >= 768px (planšetės) */
+@media (min-width: 768px) {
+  body {
+    padding: 0 2rem; /* Planšetėms didesni kraštai */
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* >= 1280px (laptopai) */
+@media (min-width: 1280px) {
+  body {
+    padding: 0 3rem; /* Dar didesni kraštai laptopams */
+  }
+
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+/* >= 1920px (Full HD) */
+@media (min-width: 1920px) {
+  body {
+    padding: 0 4rem; /* Didžiausi kraštai Full HD ekranams */
+  }
+
+  .container {
+    padding: 0 4rem;
+  }
+}
+
+/* >= 2560px (4K) */
+@media (min-width: 2560px) {
+  body {
+    padding: 0 5rem; /* Didžiausi kraštai 4K ekranams */
+  }
+
+  .container {
+    padding: 0 5rem;
+  }
 }

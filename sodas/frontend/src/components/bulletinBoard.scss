@@ -1,8 +1,11 @@
+@use '../index.scss' as *;
+
 .bulletin {
+  width: 350px;
+  max-width: 100%;
   padding: 1rem;
   background: #f9fbe7;
   color: #33691e;
-  width: 350px;
   border-radius: 1rem;
 
   h2 {
