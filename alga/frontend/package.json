@@ -21,6 +21,7 @@
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.0",
+    "react-spinners": "^0.17.0",
     "yup": "^1.6.1"
   },
   "devDependencies": {
@@ -53,7 +54,7 @@
       "buildResources": "public"
     },
     "win": {
-      "icon": "public/logo.png",
+      "icon": "public/logo_1.ico",
       "target": [
         "portable"
       ]

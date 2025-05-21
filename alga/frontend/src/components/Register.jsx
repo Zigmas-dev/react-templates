@@ -1,10 +1,11 @@
+// src/components/Register.jsx
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import axios from "axios";
+// import axios from "axios"; // Užkomentuojame axios importą
 import "./forms.scss";
 
-const Register = ({ onLoginClick }) => {
+const Register = ({ onLoginClick, onRegisterSuccess }) => {
   const registerSchema = Yup.object().shape({
     email: Yup.string().email("Neteisingas el. pašto formatas").required("El. paštas būtinas"),
     password: Yup.string().min(6, "Slaptažodis turi būti bent 6 simbolių").required("Slaptažodis būtinas"),
@@ -12,31 +13,39 @@ const Register = ({ onLoginClick }) => {
   });
 
   const handleRegister = async (values, { setSubmitting, resetForm }) => {
-    try {
-      const response = await axios.post("http://127.0.0.1:3000/auth/register", {
-        email: values.email,
-        password: values.password,
-      });
+    // try {
+    //   // Užkomentuojame prisijungimą prie back-endo
+    //   const response = await axios.post("http://127.0.0.1:3000/auth/register", {
+    //     email: values.email,
+    //     password: values.password,
+    //   });
 
-      alert(response.data.message);
+    //   alert(response.data.message);
+    // } 
+    
+    // Imiduojame sėkmingą registraciją po trumpo delsimo
+    console.log("Imituojama registracija su:", values);
+    setSubmitting(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Imituoja tinklo delsimą
 
-      // 🔹 Išsaugoti vartotojo duomenis localStorage
-      localStorage.setItem("user", JSON.stringify({ email: values.email }));
+    alert("Registracija sėkminga! Galite prisijungti.");
 
-      resetForm();
-    } catch (error) {
-      console.error("Registracijos klaida:", error);
-      alert("Registracijos klaida");
-    } finally {
-      setSubmitting(false);
+    // Sėkmės atveju
+    localStorage.setItem("user", JSON.stringify({ email: values.email })); // Vis tiek išsaugome vartotojo duomenis
+    
+    resetForm(); // Išvalome formą
+    if (onRegisterSuccess) {
+      onRegisterSuccess(); // Iškviečiame tėvinio komponento funkciją, kad nukreiptume vartotoją
     }
+    
+    setSubmitting(false); // Nustatome, kad formos siuntimas baigtas
   };
 
   return (
     <div className="form-container">
       <h2>Reikia registruotis</h2>
       <Formik initialValues={{ email: "", password: "", confirmPassword: "" }} validationSchema={registerSchema} onSubmit={handleRegister}>
-        {({ errors, touched }) => (
+        {({ errors, touched, isSubmitting }) => ( // Pridėjome isSubmitting iš Formik
           <Form>
             <div className="form-group">
               <label htmlFor="register-email">El. paštas</label>
@@ -66,12 +75,14 @@ const Register = ({ onLoginClick }) => {
             </div>
 
             <div className="button-wrapper">
-              <button type="submit" className="form-button">Registruotis</button>
+              <button type="submit" className="form-button" disabled={isSubmitting}> {/* Naudojame isSubmitting */}
+                {isSubmitting ? 'Registruojama...' : 'Registruotis'}
+              </button>
             </div>
 
             <p>
               Jau turi paskyrą?{" "}
-              <button className="link-button" type="button" onClick={onLoginClick}>
+              <button className="link-button" type="button" onClick={onLoginClick} disabled={isSubmitting}>
                 Prisijunk
               </button>
             </p>

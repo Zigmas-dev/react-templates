@@ -10,7 +10,7 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1000,
     height: 800,
-    icon: path.join(__dirname, 'public', 'logo.png'), // 👈 čia nurodomas ikonos kelias
+    icon: path.join(__dirname, 'public', 'logo_1.ico'), // 👈 čia nurodomas ikonos kelias
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
