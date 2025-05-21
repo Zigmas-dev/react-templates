@@ -1,6 +1,10 @@
+import "./footer.scss";
+
 const Footer = () => (
-    <footer>
-      <p>© {new Date().getFullYear()} Visos teisės saugomos.</p>
+    <footer className="footer">
+      <div className="footer-content">
+        <p>© {new Date().getFullYear()} Visos teisės saugomos.</p>
+      </div>
     </footer>
   );
   export default Footer;
