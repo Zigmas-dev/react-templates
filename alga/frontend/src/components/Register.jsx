@@ -13,29 +13,16 @@ const Register = ({ onLoginClick, onRegisterSuccess }) => {
   });
 
   const handleRegister = async (values, { setSubmitting, resetForm }) => {
-    // try {
-    //   // Užkomentuojame prisijungimą prie back-endo
-    //   const response = await axios.post("http://127.0.0.1:3000/auth/register", {
-    //     email: values.email,
-    //     password: values.password,
-    //   });
-
-    //   alert(response.data.message);
-    // } 
-    
-    // Imiduojame sėkmingą registraciją po trumpo delsimo
     console.log("Imituojama registracija su:", values);
     setSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 1000)); // Imituoja tinklo delsimą
 
-    alert("Registracija sėkminga! Galite prisijungti.");
-
-    // Sėkmės atveju
+    // Imituojame sėkmingą registraciją
     localStorage.setItem("user", JSON.stringify({ email: values.email })); // Vis tiek išsaugome vartotojo duomenis
     
     resetForm(); // Išvalome formą
     if (onRegisterSuccess) {
-      onRegisterSuccess(); // Iškviečiame tėvinio komponento funkciją, kad nukreiptume vartotoją
+      onRegisterSuccess(); // Iškviečiame tėvinio komponento funkciją
     }
     
     setSubmitting(false); // Nustatome, kad formos siuntimas baigtas
@@ -45,7 +32,7 @@ const Register = ({ onLoginClick, onRegisterSuccess }) => {
     <div className="form-container">
       <h2>Reikia registruotis</h2>
       <Formik initialValues={{ email: "", password: "", confirmPassword: "" }} validationSchema={registerSchema} onSubmit={handleRegister}>
-        {({ errors, touched, isSubmitting }) => ( // Pridėjome isSubmitting iš Formik
+        {({ errors, touched, isSubmitting }) => (
           <Form>
             <div className="form-group">
               <label htmlFor="register-email">El. paštas</label>
@@ -75,7 +62,7 @@ const Register = ({ onLoginClick, onRegisterSuccess }) => {
             </div>
 
             <div className="button-wrapper">
-              <button type="submit" className="form-button" disabled={isSubmitting}> {/* Naudojame isSubmitting */}
+              <button type="submit" className="form-button" disabled={isSubmitting}>
                 {isSubmitting ? 'Registruojama...' : 'Registruotis'}
               </button>
             </div>

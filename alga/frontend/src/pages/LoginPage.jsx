@@ -1,18 +1,26 @@
 // src/pages/LoginPage.jsx
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importuojame useNavigate
+import { useNavigate } from "react-router-dom";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import "./loginPage.scss";
 
 const LoginPage = () => {
   // Pradžioje nustatome, kad būtų rodoma registracijos forma
-  const [isRegistering, setIsRegistering] = useState(true); // Pakeista į true
-  const navigate = useNavigate(); // Inicijuojame useNavigate hook'ą
+  const [isRegistering, setIsRegistering] = useState(true);
+  const navigate = useNavigate();
 
   // Funkcija, kuri bus iškviesta po sėkmingos registracijos arba prisijungimo
-  const handleAuthSuccess = () => {
-    navigate("/main"); // Nukreipiame vartotoją į /main puslapį
+  // Dabar ji priims argumentą, kuris nurodys, kokia buvo operacija
+  const handleAuthSuccess = (operationType) => {
+    if (operationType === "register") {
+      // Jei tai registracija, tiesiog pakeičiame į prisijungimo formą
+      setIsRegistering(false);
+      alert("Registracija sėkminga! Dabar galite prisijungti.");
+    } else if (operationType === "login") {
+      // Jei tai prisijungimas, nukreipiame į /main puslapį
+      navigate("/main");
+    }
   };
 
   return (
@@ -20,12 +28,14 @@ const LoginPage = () => {
       {isRegistering ? (
         <Register
           onLoginClick={() => setIsRegistering(false)}
-          onRegisterSuccess={handleAuthSuccess} // Paduodame sėkmės funkciją
+          // Paduodame handleAuthSuccess ir nurodome operacijos tipą
+          onRegisterSuccess={() => handleAuthSuccess("register")}
         />
       ) : (
         <Login
           onRegisterClick={() => setIsRegistering(true)}
-          onLoginSuccess={handleAuthSuccess} // Paduodame sėkmės funkciją
+          // Paduodame handleAuthSuccess ir nurodome operacijos tipą
+          onLoginSuccess={() => handleAuthSuccess("login")}
         />
       )}
     </div>

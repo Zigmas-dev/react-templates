@@ -11,10 +11,10 @@ $placeholder-color: #aaa; // Placeholder teksto spalva
 $header-bg: #e0e0e0; // Antraštės fono spalva
 
 .salary-calculator {
-  max-width: 800px; // Lentelė gali būti platesnė, todėl didesnis plotis
+  max-width: 900px; // Padidinau, kad tilptų naujas stulpelis
   font-family: var(--main-font);
   margin: 40px auto;
-  margin-top: 5rem;
+  margin-top: 0.5rem;
   padding: 0.5rem;
   background-color: #fff;
   border-radius: 12px;
@@ -33,23 +33,23 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
   .calculator-form {
     display: flex;
     flex-direction: column;
-    align-items: center; // Centruoja elementus, tokius kaip mygtukas ir rezultatas
+    align-items: center;
     gap: 1rem;
 
     .data-table {
-      width: 100%; // Užima visą turimą plotį
-      border-collapse: collapse; // Sudaro vientisą lentelės rėmelį
+      width: 100%;
+      border-collapse: collapse;
       margin-bottom: 10px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      border-radius: 8px; // Visai lentelei
-      overflow: hidden; // Užtikrina suapvalintus kampus
+      border-radius: 8px;
+      overflow: hidden;
 
       th, td {
         border: 1px solid $border-color;
         padding: 12px 15px;
         text-align: center;
-        box-sizing: border-box; // Paddingas ir borderis įskaičiuojami į plotį
-        position: relative; // Klaidų pranešimams
+        box-sizing: border-box;
+        position: relative;
       }
 
       th {
@@ -58,9 +58,8 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
         font-family: var(--main-font);
         font-weight: 500;
         font-size: 1rem;
-        white-space: nowrap; // Neleidžia teksto perskirti į kelias eilutes
+        white-space: nowrap;
         
-        // Stilizuoja ikonas antraštėse
         svg {
           margin-right: 8px;
           vertical-align: middle;
@@ -69,10 +68,10 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
 
       tbody {
         tr {
-          &:nth-child(even) { // Kas antra eilutė šviesesnė
+          &:nth-child(even) {
             background-color: #f9f9f9;
           }
-          &:hover { // Užvedus pelę, eilutė pašviesėja
+          &:hover {
             background-color: #f0f0f0;
           }
         }
@@ -81,16 +80,16 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
       td {
         input[type="text"],
         input[type="number"] {
-          width: 100%; // Inputas užima visą langelio plotį
-          padding: 8px 10px;
-          border: 1px solid transparent; // Nematomas rėmelis pagal nutylėjimą
+          width: 100%;
+          //padding: 8px 10px;
+          border: 1px solid transparent;
           border-radius: 6px;
           font-family: var(--main-font);
           font-size: 1rem;
           color: $text-color;
           text-align: center;
           transition: border-color 0.3s ease, box-shadow 0.3s ease;
-          background-color: transparent; // Inputo fonas permatomas
+          background-color: transparent;
 
           &::placeholder {
             color: $placeholder-color;
@@ -100,11 +99,10 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
             outline: none;
             border-color: $secondary-color;
             box-shadow: 0 0 0 2px rgba($secondary-color, 0.2);
-            background-color: #fff; // Užvedus inputo fonas tampa baltas
+            background-color: #fff;
           }
         }
         
-        // Klaidų pranešimas po inputu
         .error {
           color: $error-color;
           font-family: var(--main-font);
@@ -112,9 +110,32 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
           margin-top: 5px;
           text-align: center;
           position: absolute;
-          bottom: -18px; // Pozicionuojama po inputu langelyje
+          bottom: -18px;
           left: 0;
           right: 0;
+        }
+      }
+
+      // Stilius naujam "Bendra suma" langeliui
+      .total-cell {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: $primary-color;
+        background-color: #e8f5e9; // Šviesesnis žalias fonas
+        display: flex; // Leidžia centuoti turinį
+        align-items: center;
+        justify-content: center;
+
+        strong {
+          color: $primary-color;
+          font-family: var(--main-font);
+          font-size: 1.1em;
+        }
+
+        .loading-text, .placeholder-text {
+          color: $placeholder-color;
+          font-weight: normal;
+          font-size: 0.9em;
         }
       }
     }
@@ -131,7 +152,6 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
       transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
       font-weight: 500;
       align-self: center;
-      //margin-top: 1rem; // Atstumas nuo lentelės
       margin-bottom: 0.5rem;
 
       &:hover:not(:disabled) {
@@ -146,52 +166,24 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
         box-shadow: none;
       }
     }
-
-    .result {
-      margin-top: 25px;
-      padding: 20px;
-      background-color: $light-grey;
-      border-radius: 10px;
-      font-family: var(--main-font);
-      font-size: 1.6em;
-      font-weight: 600;
-      color: $text-color;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
-
-      svg {
-        color: $primary-color;
-        font-size: 1.2em;
-      }
-
-      strong {
-        color: $primary-color;
-        font-family: var(--main-font);
-        font-size: 1.1em;
-      }
-    }
   }
 }
 
 // Media užklausos responsyvumui (Horizontalus slinkimas)
 @media (max-width: 768px) {
   .salary-calculator {
-    padding: 20px 10px; // Mažesnis paddingas šonuose
+    padding: 20px 10px;
     margin: 20px auto;
   }
   .data-table {
-    display: block; // Leidžia lentelei slinkti horizontaliai
-    width: fit-content; // Užtikrina, kad lentelė nebūtų "suspausta"
-    margin: 0 auto; // Centruoja lentelę, jei ji siauresnė už tėvinį elementą
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
   }
 
-  // Antraštės ir langeliai pasilieka savo formoje
   th, td {
-    min-width: 120px; // Nustatome minimalų plotį, kad nebūtų per daug suspausta
-    padding: 10px 8px; // Mažesnis paddingas
+    min-width: 110px; // Sumažintas minimalus plotis, kad tilptų
+    padding: 10px 8px;
     font-size: 0.9em;
   }
 
@@ -202,7 +194,7 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
 
 @media (max-width: 480px) {
   .salary-calculator {
-    padding: 15px 5px; // Dar mažesnis paddingas
+    padding: 15px 5px;
   }
 
   h2 {
@@ -215,11 +207,6 @@ $header-bg: #e0e0e0; // Antraštės fono spalva
     button[type="submit"] {
       padding: 12px 20px;
       font-size: 1em;
-    }
-
-    .result {
-      font-size: 1.3em;
-      padding: 15px;
     }
   }
 }

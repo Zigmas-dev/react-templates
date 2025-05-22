@@ -17,31 +17,21 @@ const Login = ({ onRegisterClick, onLoginSuccess }) => {
   const handleLogin = async (values, { setSubmitting }) => {
     setServerError("");
 
-    // try {
-    //   // Užkomentuojame prisijungimą prie back-endo
-    //   const response = await axios.post("http://127.0.0.1:3000/auth/login", values);
-    //   localStorage.setItem("token", response.data.token); // Išsaugome token'ą
-    // } 
-    
-    // Imiduojame sėkmingą prisijungimą po trumpo delsimo
     console.log("Imituojamas prisijungimas su:", values);
     setSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 1000)); // Imituoja tinklo delsimą
 
-    // Imituojame prisijungimo logiką:
-    // Tarkime, vartotojas "test@test.com" su slaptažodžiu "password" yra "sėkmingas" vartotojas
     if (values.email === "test@test.com" && values.password === "password") {
-      alert("Prisijungimas sėkmingas!");
-      localStorage.setItem("token", "fake-jwt-token-123"); // Išsaugome "netikrą" token'ą
+      alert("Prisijungimas sėkmingas!"); // Šį alert galite palikti, arba jį pašalinti, jei nereikalingas
+      localStorage.setItem("token", "fake-jwt-token-123");
       if (onLoginSuccess) {
-        onLoginSuccess(); // Iškviečiame tėvinio komponento funkciją, kad nukreiptume vartotoją
+        onLoginSuccess();
       }
     } else {
       setServerError("Neteisingas el. paštas arba slaptažodis (imitacija)");
-      // Neskambiname onLoginSuccess, nes prisijungimas "nepavyko"
     }
 
-    setSubmitting(false); // Nustatome, kad formos siuntimas baigtas
+    setSubmitting(false);
   };
 
   return (
@@ -49,7 +39,7 @@ const Login = ({ onRegisterClick, onLoginSuccess }) => {
       <h2>Reikia prisijungti</h2>
       {serverError && <div className="server-error">{serverError}</div>}
       <Formik initialValues={{ email: "", password: "" }} validationSchema={loginSchema} onSubmit={handleLogin}>
-        {({ errors, touched, isSubmitting }) => ( // Pridėjome isSubmitting iš Formik
+        {({ errors, touched, isSubmitting }) => (
           <Form>
             <div className="form-group">
               <label htmlFor="login-email">El. paštas</label>
@@ -70,7 +60,7 @@ const Login = ({ onRegisterClick, onLoginSuccess }) => {
             </div>
 
             <div className="button-wrapper">
-              <button type="submit" className="form-button" disabled={isSubmitting}> {/* Naudojame isSubmitting */}
+              <button type="submit" className="form-button" disabled={isSubmitting}>
                 {isSubmitting ? 'Prisijungiama...' : 'Prisijungti'}
               </button>
             </div>

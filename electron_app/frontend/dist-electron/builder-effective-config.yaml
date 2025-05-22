@@ -1,0 +1,17 @@
+directories:
+  output: dist-electron
+  buildResources: build
+appId: com.frontend.app
+productName: FrontendApp
+files:
+  - filter:
+      - dist
+      - main
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+portable:
+  artifactName: ${productName}-USB.exe
+electronVersion: 36.2.1
