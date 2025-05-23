@@ -54,7 +54,7 @@
       "buildResources": "public"
     },
     "win": {
-      "icon": "public/logo_1.ico",
+      "icon": "public/multiservice_icon.ico",
       "target": [
         "portable"
       ]
