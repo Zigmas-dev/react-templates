@@ -17,10 +17,14 @@ function createWindow() {
     }
   });
 
+  // ❌ Pašaliname meniu juostą
+  win.setMenu(null);
+
   // Development mode (vite)
   if (process.env.NODE_ENV === 'development') {
     win.loadURL('http://localhost:5173');
-    win.webContents.openDevTools();
+    // kad nerodyrų devtools paleidžiant
+    //win.webContents.openDevTools();
   } else {
     win.loadFile(path.join(__dirname, '../dist/index.html'));
   }
