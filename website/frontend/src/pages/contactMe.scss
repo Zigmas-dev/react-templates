@@ -3,7 +3,21 @@
   flex-direction: column; 
   align-items: center;
   min-width: 390px;
-  margin: 7rem auto; 
+  margin: 6rem auto;
+
+  .contact-message {
+    //margin-top: 2rem;
+    font-size: 1.25rem;
+    color: #222;
+    background-color: #eaf4ff;
+    padding: 1.2rem 2rem;
+    border-radius: 10px;
+    border: 2px solid #4a90e2;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(74, 144, 226, 0.3);
+    user-select: none;
+  }
 
   @media (min-width: 768px) {
     margin: 12rem auto;
@@ -12,18 +26,32 @@
   @media (min-width: 1024px) {
     flex-direction: row;
     margin: 4rem auto;
+    gap: 2rem; // atstumas tarp Image ir pranešimo
+    align-items: flex-start;
+
+    .contact-message {
+      margin-top: 0;
+      text-align: left;
+      align-self: center;
+      max-width: 350px;
+    }
   }
 
   @media (min-width: 1440px) {
-    margin-left: 9rem;;
-    gap: 1rem; // Atstumas tarp blokų
+    margin-left: 9rem;
+    gap: 3rem;
+
+    .contact-message {
+      max-width: 380px;
+    }
   }
 
   @media (min-width: 1920px) {
-    margin-left: 22rem;;
+    margin-left: 22rem;
     gap: 6rem;
+
+    .contact-message {
+      max-width: 420px;
+    }
   }
 }
-
-  
-  
